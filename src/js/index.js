@@ -13,6 +13,9 @@ import '../styles/index.scss';
 
 //import your own components
 import Layout from './Layout.jsx';
+import {Dropdown} from './components/Dropdown.jsx';
+import {Bigbutton} from './components/Bigbutton.jsx';
+import {Companyinfo} from './components/Companyinfo.jsx';
 
 
 class Card extends React.Component{
@@ -20,23 +23,52 @@ class Card extends React.Component{
       
          return <div className="container">
              <div className='row'>
-                 <div className='col-2'></div>
-                 <div className='col-8'>
-                     <div className="card">
-                         <div className="card-body">
-                             <h5 className="card-title">Card title</h5>
-                             <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                             
-                             <a href="#" className="card-link">Card link</a>
-                            
+                 <div className='col-1'></div>
+                 <div className='col-10'>
+                     <div className="card text-center">
+                         <div className="card-header">
+                             <img src='https://www.mundiplumarii.com/en/wp-content/uploads/2017/12/bitcoin-small-e1512565577216.jpg'></img>
+                             Crappy Coins!
                          </div>
-                     </div>  
-
-                    
+                         <div className="card-body">
+                             <div className='container-fluid'>
+                                 <div className='row'>
+                                     <div className='col-6'>
+                                         <Dropdown />
+                                     </div>
+                                     <div className='col-6'>
+                                         <Dropdown />
+                                     </div>
+                                 </div>
+                             </div> 
+                             <div className='container-fluid'>
+                                 <div className='row'>
+                                     <div className='col-4'>
+                                         <Dropdown />
+                                     </div>
+                                     <div className='col-4'>
+                                         <Dropdown />
+                                     </div>
+                                     <div className='col-4'>
+                                         <Dropdown />
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         <div className="card-footer text-muted">
+                             <Bigbutton />
+                         </div>
+                         <div>
+                             <Companyinfo />
+                         </div>
+                     </div>
                  </div>
-                 <div className='col-2'></div>
+                 <div className='col-1'></div>
              </div>
          </div>;
+        
+                           
+                     
   } 
   
 }
@@ -46,6 +78,6 @@ class Card extends React.Component{
 
 //render your react application
 ReactDOM.render(
-    <Layout />,
+    <Card />,
     document.querySelector('#app')
 );

@@ -12,40 +12,11 @@ import 'bootstrap';
 import '../styles/index.scss';
 
 //import your own components
-import Layout from './Layout.jsx';
-
-
-class Card extends React.Component{
-  render() {
-      
-         return <div className="container">
-             <div className='row'>
-                 <div className='col-2'></div>
-                 <div className='col-8'>
-                     <div className="card">
-                         <div className="card-body">
-                             <h5 className="card-title">Card title</h5>
-                             <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                             
-                             <a href="#" className="card-link">Card link</a>
-                            
-                         </div>
-                     </div>  
-
-                    
-                 </div>
-                 <div className='col-2'></div>
-             </div>
-         </div>;
-  } 
-  
-}
-
-    
-
+import {Jumbo} from './views/Jumbo.jsx';
 
 //render your react application
+
 ReactDOM.render(
-    <Layout />,
+    <Jumbo />,
     document.querySelector('#app')
 );

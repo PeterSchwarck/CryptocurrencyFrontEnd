@@ -1,3 +1,15 @@
-// .jumbotron{
-//         width: 500 px; 
-// }
+.jumbotron {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 750px;
+     
+     .deleteX {
+      float: right;
+      margin-top: -43px;
+     }
+     
+     .btn-secondary {
+         float: right;
+     }
+}

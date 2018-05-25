@@ -26,6 +26,7 @@ export class NotificationCard extends React.Component {
                         <h5 className="card-title">(Name of Cryptocurrency)</h5>
                     </div>
                     <div className="badges">
+                        <p></p>
                         <span className="badge badge-primary">Primary</span>
                         <span className="badge badge-success">Success</span>
                         <span className="badge badge-danger">Danger</span>
@@ -38,6 +39,7 @@ export class NotificationCard extends React.Component {
                             </i>
                         </button>
                         </span>
+                        <p></p>
                     </div>    
                     <div>
                         <a href="#" className="btn btn-secondary">Cancel</a>

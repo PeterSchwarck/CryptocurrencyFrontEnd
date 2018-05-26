@@ -1,45 +1,8 @@
 @import '~bootstrap/scss/bootstrap.scss';
 @import './components/companyinfo.scss';
 @import './components/dropdown.scss';
+@import './components/Introduction.scss';
 
-.card {
-    margin-top: 200px;
-    width: 900px;
-    height: 500px;
-    background:  #134A65;
-    color: #C9C6C1;
-    
-}
 
-.card-header { 
-    display: inline-bock;
-  
-    
-}
 
-img {
-    height: 50px;
-    border-radius: 50%;
-    background: rgb(178, 0, 178) ;
-}
-
-body {
-    background: black;
-}
-.card-header{
-    background: rgb(178, 0, 178);
-    color: #C9C6C1;
-    font: 50px arial, sans-serif;
-    border-style: solid;
-}
-
-.container{
-    background: rgb(0, 0, 0);
-    border-width: thick;
-}
-
-.card-body{
-    border-width: thick;
-    border-style: solid;
-}
 

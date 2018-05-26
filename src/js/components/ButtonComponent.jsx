@@ -19,3 +19,16 @@ ButtonComponent.defaultProps = {
   color: 'light'
 };
 export default ButtonComponent;
+
+
+// export class Country extends React.Component {
+//     render(){
+//       return <div className="notificationcard">
+//           <div>
+//               <NotificationCard 
+//                 btnLabel='Data refresh'
+//           />,
+//           </div>
+//       </div>;
+//     }
+// }

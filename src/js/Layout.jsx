@@ -3,18 +3,29 @@ import Flux from "@4geeksacademy/react-flux-dash";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./views/Home.jsx";
 import Product from "./views/Product.jsx";
+import {Jumbo} from './views/Jumbo.jsx';
 
-export default class Layout extends Flux.View {
+import {AboutUs} from './views/AboutUs.jsx';
+import {Scanner} from './views/AboutUs.jsx';
+
+import {Confirm} from './views/Confirm.jsx';
+
+import {NotificationCard} from './views/NotificationCard.jsx';
+
+export class Layout extends Flux.View {
     render() {
         return (
             <div>
                 <BrowserRouter>
                     <div>
                         <Switch>
-                            <Route exact path="/index.html" component={Home} />
-                            <Route exact path="/" component={Home} />
-                            <Route exact path="/home" component={Home} />
-                            <Route exact path="/product/:id" component={Product} />
+                            
+                            <Route exact path="/index.html" component={Scanner} />
+                            <Route exact path="/" component={Scanner} />
+                            <Route exact path="/aboutus" component={AboutUs} />
+                            <Route exact path="/notifications" component={Jumbo} />
+                            <Route exact path="/confirm" component={Confirm} />
+                            <Route exact path="/card" component={NotificationCard} />
                             <Route render={() => <h1>Not found!</h1>} />
                         </Switch>
                     </div>

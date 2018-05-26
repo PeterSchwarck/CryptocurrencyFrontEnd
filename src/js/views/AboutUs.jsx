@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AddAlert from '../components/AddAlert';
+import {AddAlert} from '../components/AddAlert';
 
 export class AboutUs extends React.Component {
     render(){

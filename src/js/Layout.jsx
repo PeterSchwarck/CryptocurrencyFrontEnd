@@ -1,11 +1,9 @@
 import React from 'react';
 import Flux from "@4geeksacademy/react-flux-dash";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "./views/Home.jsx";
-import Product from "./views/Product.jsx";
 
 import {AboutUs} from './views/AboutUs.jsx';
-import {Scanner} from './views/AboutUs.jsx';
+import {Scanner} from './views/Introduction.jsx';
 
 import {Confirm} from './views/Confirm.jsx';
 

@@ -5,6 +5,7 @@ import Home from "./views/Home.jsx";
 import Product from "./views/Product.jsx";
 
 import {AboutUs} from './views/AboutUs.jsx';
+import {Scanner} from './views/AboutUs.jsx';
 
 import {Confirm} from './views/Confirm.jsx';
 
@@ -17,8 +18,9 @@ export class Layout extends Flux.View {
                 <BrowserRouter>
                     <div>
                         <Switch>
-                            <Route exact path="/index.html" component={Home} />
-                            <Route exact path="/" component={Home} />
+                            
+                            <Route exact path="/index.html" component={Scanner} />
+                            <Route exact path="/" component={Scanner} />
                             <Route exact path="/aboutus" component={AboutUs} />
                             <Route exact path="/confirm" component={Confirm} />
                             <Route exact path="/card" component={NotificationCard} />

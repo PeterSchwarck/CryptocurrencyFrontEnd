@@ -1,5 +1,7 @@
 import React from 'react';
 
+import AddAlert from '../components/AddAlert';
+
 export class AboutUs extends React.Component {
     render(){
         return <div className="aboutUs"> 
@@ -45,7 +47,8 @@ export class AboutUs extends React.Component {
                     <div className="col">
                     </div>
                 </div>
-            </div>    
+            </div> 
+            <AddAlert />
         </div>;
     }
 }

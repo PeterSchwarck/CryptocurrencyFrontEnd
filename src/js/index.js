@@ -1,7 +1,6 @@
 //import react into the bundle
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 
 //include jquery into the bundle and store its contents into the $ variable
 import $ from "jquery";
@@ -12,9 +11,7 @@ import 'bootstrap';
 import '../styles/index.scss';
 
 //import your own components
-import {Layout} from './Layout.jsx';
-
-//render your react application
+import Layout from './Layout.jsx';
 
 ReactDOM.render(
     <Layout />,

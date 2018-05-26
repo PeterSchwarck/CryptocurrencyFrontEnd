@@ -1,6 +1,7 @@
 import React from 'react';
-import {Dropdown} from './components/Dropdown.jsx';
-import {Bigbutton} from './components/Bigbutton.jsx';
+import {Dropdown} from '../components/Dropdown.jsx';
+import {Bigbutton} from '../components/Bigbutton.jsx';
+import {Companyinfo} from '../components/Companyinfo.jsx';
 export class Scanner extends React.Component{
     render(){
         return(           

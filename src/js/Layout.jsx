@@ -6,7 +6,7 @@ import Product from "./views/Product.jsx";
 import {Jumbo} from './views/Jumbo.jsx';
 
 import {AboutUs} from './views/AboutUs.jsx';
-import {Scanner} from './views/AboutUs.jsx';
+import {Scanner} from './views/Introduction.jsx';
 
 import {Confirm} from './views/Confirm.jsx';
 

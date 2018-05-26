@@ -1,8 +1,17 @@
 //import react into the bundle
 import React from 'react';
-export class Jumbo extends React.Component {
+
+import SmartSelect from '../components/SmartSelect';
+
+export class AddAlert extends React.Component {
     render(){
-        return <div className="jumbotron">
+        
+        const countries = [
+            {label: 'USA', icon: 'us' },
+            {label: 'Venezuela', icon: 've' },
+            {label: 'Germany', icon: 'ge' }
+        ];
+        return <div className="jumbotron add-alert">
             <div className="deleteX">
                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -21,12 +30,7 @@ export class Jumbo extends React.Component {
                                 <span className="form-row align-items-center">
                                     <div className="col-auto my-1">
                                         <label className="mr-sm-2" htmlForfor="inlineFormCustomSelect"></label>
-                                        <select className="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                                            <option selected>Choose...</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
+                                        <SmartSelect options={countries} />
                                     </div>
                                     <label htmlFor="formGroupExampleInput"></label>
                                     <input type="text" className="form-controlPhone" id="formGroupExampleInput" placeholder="Mobile number"></input>

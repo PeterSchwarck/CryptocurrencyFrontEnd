@@ -1,7 +1,7 @@
 //import react into the bundle
 import React from 'react';
 
-import SmartSelect from '../components/SmartSelect';
+import SmartSelect from '../components/SmartSelect.jsx';
 
 export class AddAlert extends React.Component {
     render(){

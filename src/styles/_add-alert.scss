@@ -1,13 +1,12 @@
 
-.add-alert{
-  .jumbotron {
+.jumbotron.add-alert{
       position: relative;
       top: 0;
       left: 0;
       width: 750px;
       background-color: #0E0B16;
       color: #e7dfdd;
-      
+      border: 1px solid #A239CA;
        
        .deleteX {
         float: right;
@@ -50,5 +49,5 @@
        button.close {
         color: #e7dfdd;
        }
-  }
+  
 }

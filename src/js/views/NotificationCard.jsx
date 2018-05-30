@@ -30,11 +30,11 @@ export class NotificationCard extends React.Component {
                     </div>
                     <div className="badges">
                         <p></p>
-                        <span className="badge badge-info-marketCap">Market cap</span>
+                        <span className="badge badge-info-marketCap">Market cap range</span><span className="badge badge-light">10 M</span>
                         <p></p>
-                        <span className="badge badge-success">Volume</span><span className="badge badge-light">9</span>
-                        <span className="badge badge-danger">Market cap change</span><span className="badge badge-light">9</span>
-                        <span className="badge badge-warning">Price</span><span className="badge badge-light">9</span>
+                        <span className="badge badge-success">Volume</span><span className="badge badge-light">1 hr.</span><span className="badge badge-light">15%</span>
+                        <span className="badge badge-danger">Market cap 15 min.</span><span className="badge badge-light">-5%</span>
+                        <span className="badge badge-warning">Price 5 min.</span><span className="badge badge-light">0</span>
                         <span><button type="button" className="btn btn-light">
                             <i className="fas fa-trash-alt">
                             </i>

@@ -21,27 +21,10 @@ fontawesome.library.add(
 
 export class HomeEdit extends React.Component {
     render(){
-    
-// function myFunction() {
-//     document.getElementById("myDropdown").classNameList.toggle("show");
-// }
-
-// function filterFunction() {
-//     var input, filter, ul, li, a, i;
-//     input = document.getElementById("myInput");
-//     filter = input.value.toUpperCase();
-//         <div> = document.getElementById("myDropdown");</div>;
-//     a = <div>.getElementsByTagName("a");</div>;
-//     for (i = 0; i < a.length; i++) {
-//         if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-//             a[i].style.display = "";
-//         } else {
-//             a[i].style.display = "none";
-//         }
-//     }
-// }
-    
         return <div className="homeEdit">
+            <header>
+                <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"></link>
+            </header>
             <div className="adBanner">Ad Banner!
             </div>
             <nav className="navbar sticky-top navbar navbar-dark styleElement">
@@ -70,11 +53,11 @@ export class HomeEdit extends React.Component {
             </nav>
             <div className="containerDiv">
                 <div className="row">
-                    <div className="col">
+                    <div className="col-md-2 col-lg-3">
                     </div>
-                    <div className="col-6">
+                    <div className="col-md-8 col-lg-6">
                         <div className="topDiv">
-                            <span><img src="https://farm2.staticflickr.com/1727/40587274190_57f4609787_b.jpg" width="984" height="514" alt="logo"></img><h1>CrappyCoin</h1>
+                            <span><img src="/cryptoalerts/src/img/logo/logo.png"></img><h1>CrappyCoin</h1>
                             </span>
                         </div>
                         <div className="input-group">
@@ -99,6 +82,14 @@ export class HomeEdit extends React.Component {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="col-md-2 col-lg-3">
+                    </div>
+                </div>    
+                <div className="row">
+                    <div className="col-md-2 col-lg-3">
+                    </div>
+                    <div className="col-md-8 col-lg-6">
                         <div className="divBody-edit">
                             <div className="btn-group">
                                 <div className="dropdown  d-inline-block">
@@ -120,6 +111,7 @@ export class HomeEdit extends React.Component {
                                         <a className="dropdown-item" href="#">20%</a>
                                         <a className="dropdown-item" href="#">10%</a>
                                         <a className="dropdown-item" href="#">5%</a>
+                                        <a className="dropdown-item" href="#">0%</a>
                                         <a className="dropdown-item" href="#">-5%</a>
                                         <a className="dropdown-item" href="#">-10%</a>
                                         <a className="dropdown-item" href="#">-20%</a>
@@ -148,13 +140,20 @@ export class HomeEdit extends React.Component {
                                 </button>
                             </div>    
                         </div>
+                    </div>
+                    <div className="col-md-2 col-lg-3">
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-md-2 col-lg-3">
+                    </div>
+                    <div className="col-md-8 col-lg-6">
                         <div className="bottomDiv">
                             <button type="button" className="btn btn-secondary fithButton">Enable notifcations</button>
                             <button type="button" className="btn btn-secondary sixthButton">Add currency</button>
                         </div>
-                        
-                    </div>
-                    <div className="col">
+                    </div>    
+                    <div className="col-md-2 col-lg-3">
                     </div>
                 </div>
             </div>
@@ -176,7 +175,6 @@ export class HomeEdit extends React.Component {
                     </div>
                 </section>
             </footer>
-                          
         </div>;
     }
 }

@@ -28,15 +28,18 @@
     .badges {
         margin-right: -5px;
     }
+    
     .header {
         border-bottom: 1px solid #e9ecef;
     }
+    
     .btn-light {
         float: right;
         background-color: white;
         border: none;
         margin-right: 5px;
     }
+    
     .badge-success {
         width: 125px;
     }
@@ -57,4 +60,11 @@
     .badge-light {
         margin-right: 20px;
     }
+
+    .btn.btn-secondary.btn-md {
+        position: absolute;
+        right: 27px;
+        bottom: 25px;
+    }
 }
+

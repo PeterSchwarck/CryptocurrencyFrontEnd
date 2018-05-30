@@ -11,6 +11,14 @@ export class AddAlert extends React.Component {
             {label: 'Venezuela', icon: 've' },
             {label: 'Germany', icon: 'ge' }
         ];
+        
+        
+        var listTasks = this.state.taks.map( (taskStr, i) => {
+            return  <li key={i} className="list-group-item">{taskStr} <span className="deleteButton" onClick={() => this.deleteTask(taskStr)}>x</span></li>;
+        });
+        
+        
+        
         return <div className="jumbotron add-alert">
             <div className="deleteX">
                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">

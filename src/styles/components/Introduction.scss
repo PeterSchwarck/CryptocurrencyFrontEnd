@@ -1,4 +1,4 @@
-.Introduction{
+.scanner{
     .card {
     margin-top: 200px;
     width: 900px;
@@ -6,52 +6,49 @@
     background:  #134A65;
     color: #C9C6C1;
     
-}
-
-.card-header { 
-    display: inline-bock;
-  
+    }
     
-}
-
-img {
-    height: 50px;
-    border-radius: 50%;
-    background: rgb(178, 0, 178) ;
-}
-
-body {
-    background: black;
-}
-.card-header{
-    background: rgb(178, 0, 178);
-    color: #C9C6C1;
-    font: 50px arial, sans-serif;
-    border-style: solid;
-}
-
-.container{
-    background: rgb(0, 0, 0);
-    border-width: thick;
-}
-
-.card-body{
-    border-width: thick;
-    border-style: solid;
-
-.form-control {
-    color: blue;
     
-}
-
-.btn-primary {
-    background-color: #C9C6C1;
-}
-
-.btn-outline-secondary {
-    background: #C9C6C1 ;
-    color: rgb(178, 0, 178);
+        
     
-}
-}
+    img {
+        height: 50px;
+        border-radius: 50%;
+        background: rgb(178, 0, 178) ;
+    }
+    
+   
+    
+    .card-header{
+        background: rgb(178, 0, 178);
+        color: #C9C6C1;
+        font: 50px arial, sans-serif;
+        border-style: solid;
+        display: inline-bock;
+    }
+    
+    .container{
+        background: rgb(0, 0, 0);
+        border-width: thick;
+    }
+    
+    .card-body{
+        border-width: thick;
+        border-style: solid;
+    
+        .form-control {
+            color: blue;
+            
+        }
+        
+        .btn-primary {
+            background-color: #C9C6C1;
+        }
+        
+        .btn-outline-secondary {
+            background: #C9C6C1 ;
+            color: rgb(178, 0, 178);
+            
+        }
+    }
 }

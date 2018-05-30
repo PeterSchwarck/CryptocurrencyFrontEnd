@@ -5,7 +5,7 @@ import {Companyinfo} from '../components/Companyinfo.jsx';
 export class Scanner extends React.Component{
     render(){
         return(           
-            <div>
+            <div className='scanner'>
                 <div className='col-1'></div>
                 
                 <div className='col-10'>

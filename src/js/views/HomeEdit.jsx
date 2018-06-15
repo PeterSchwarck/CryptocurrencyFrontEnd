@@ -5,6 +5,7 @@ import faSearch from '@fortawesome/fontawesome-free-solid/faSearch';
 import faPlusCircle from '@fortawesome/fontawesome-free-solid/faPlusCircle';
 
 import faTrashAlt from '@fortawesome/fontawesome-free-solid/faTrashAlt';
+import logoUrl from '../../img/logo/logo.png';
 
 import React from 'react';
 
@@ -57,7 +58,7 @@ export class HomeEdit extends React.Component {
                     </div>
                     <div className="col-md-8 col-lg-6">
                         <div className="topDiv">
-                            <span><img src="/cryptoalerts/src/img/logo/logo.png"></img><h1>CrappyCoin</h1>
+                            <span><img src={logoUrl}></img><h1>CrappyCoin</h1>
                             </span>
                         </div>
                         <div className="input-group">

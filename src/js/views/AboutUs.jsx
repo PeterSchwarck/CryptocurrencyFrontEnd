@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {AddAlert} from '../components/AddAlert';
+
 
 export class AboutUs extends React.Component {
     render(){
@@ -53,7 +53,6 @@ export class AboutUs extends React.Component {
                     </div>
                 </div>
             </div> 
-            <AddAlert />
             <footer>
                 <section className="lab_social_icon_footer">
                     <div className="container">

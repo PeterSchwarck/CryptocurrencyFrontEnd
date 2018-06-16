@@ -5,9 +5,12 @@ import faSearch from '@fortawesome/fontawesome-free-solid/faSearch';
 import faPlusCircle from '@fortawesome/fontawesome-free-solid/faPlusCircle';
 
 import faTrashAlt from '@fortawesome/fontawesome-free-solid/faTrashAlt';
+
 import logoUrl from '../../img/logo/logo.png';
 
 import React from 'react';
+
+import {AddAlert} from '../components/AddAlert';
 
 fontawesome.config = {
 autoReplaceSvg: 'nest'
@@ -52,14 +55,11 @@ export class HomeEdit extends React.Component {
                     </span>
                 </div>
             </nav>
-            <div className="containerDiv">
+            <div className="containerDiv container">
                 <div className="row">
-                    <div className="col-md-2 col-lg-3">
-                    </div>
-                    <div className="col-md-8 col-lg-6">
+                    <div className="col-12 col-lg-8 col-md-10 mx-auto">
                         <div className="topDiv">
-                            <span><img src={logoUrl}></img><h1>CrappyCoin</h1>
-                            </span>
+                            <img src={logoUrl}></img><h1>CrappyCoin</h1>
                         </div>
                         <div className="input-group">
                             <div>
@@ -84,13 +84,9 @@ export class HomeEdit extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-2 col-lg-3">
-                    </div>
                 </div>    
                 <div className="row">
-                    <div className="col-md-2 col-lg-3">
-                    </div>
-                    <div className="col-md-8 col-lg-6">
+                    <div className="col-12 col-lg-8 col-md-10 mx-auto">
                         <div className="divBody-edit">
                             <div className="btn-group">
                                 <div className="dropdown  d-inline-block">
@@ -118,19 +114,10 @@ export class HomeEdit extends React.Component {
                                         <a className="dropdown-item" href="#">-20%</a>
                                     </div>
                                 </div>
-                                <div className="dropdown  d-inline-block">
-                                    <button className="btn btn-secondary dropdown-toggle fourthButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Time
-                                    </button>
-                                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a className="dropdown-item" href="#">24 hr.</a>
-                                        <a className="dropdown-item" href="#">12 hr.</a>
-                                        <a className="dropdown-item" href="#">1 hr.</a>
-                                        <a className="dropdown-item" href="#">30 min.</a>
-                                        <a className="dropdown-item" href="#">15 min.</a>
-                                        <a className="dropdown-item" href="#">5 min.</a>
-                                    </div>
-                                </div>
+                                <button type="button" className="btn btn-secondary fithButton">Enable notifcations</button>
+                                
+                                
+                                
                                 <button type="button" className="btn btn-light plus">
                                     <i className="fas fa-plus-circle">
                                     </i>
@@ -142,20 +129,13 @@ export class HomeEdit extends React.Component {
                             </div>    
                         </div>
                     </div>
-                    <div className="col-md-2 col-lg-3">
-                    </div>
                 </div>
                 <div className="row">
-                    <div className="col-md-2 col-lg-3">
-                    </div>
-                    <div className="col-md-8 col-lg-6">
+                    <div className="col-12 col-lg-8 col-md-10 mx-auto">
                         <div className="bottomDiv">
-                            <button type="button" className="btn btn-secondary fithButton">Enable notifcations</button>
                             <button type="button" className="btn btn-secondary sixthButton">Add currency</button>
                         </div>
                     </div>    
-                    <div className="col-md-2 col-lg-3">
-                    </div>
                 </div>
             </div>
             <footer>
@@ -176,6 +156,7 @@ export class HomeEdit extends React.Component {
                     </div>
                 </section>
             </footer>
+            <AddAlert />
         </div>;
     }
 }

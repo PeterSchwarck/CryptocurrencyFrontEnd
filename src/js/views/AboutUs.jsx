@@ -3,6 +3,8 @@ import React from 'react';
 import {AddAlert} from '../components/AddAlert';
 import {Link} from 'react-router-dom';
 
+
+
 export class AboutUs extends React.Component {
     render(){
         return <div className="aboutUs"> 
@@ -48,13 +50,12 @@ export class AboutUs extends React.Component {
                         <p className="lead"><b>Market Cap</b></p>
                         <p className="lead">Market cap, or market capitalization, is the market value of all outstanding coins of a cryptocurrency. Market capitalization is calculated by multiplying the outstanding coins by the current market price of a cryptocurrency.</p>
                         <p className="lead"><b>Volume</b></p>
-                        <p className="lead">Volume is the number of coins traded on all cryptocurrency exchanges. The volume is calculated each minute and presented on a user defined period of time.</p>
+                        <p className="lead">Volume is the number of coins traded on all cryptocurrency exchanges. The volume is calculated each minute and presented on a user-defined period of time.</p>
                     </div>
                     <div className="col">
                     </div>
                 </div>
             </div> 
-            <AddAlert />
             <footer>
                 <section className="lab_social_icon_footer">
                     <div className="container">

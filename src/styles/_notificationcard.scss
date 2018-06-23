@@ -10,13 +10,18 @@
         color: #e7dfdd;
     }
     
+    .badge {
+        font-size: 100%;    
+    }
+    
    .badges {
-       margin-right: 10px;
+        margin-right: 10px;
    }
     
     .edit {
         float: right;
     }
+    
     .btn-secondary {
         margin-top: 20px;
     }
@@ -28,25 +33,28 @@
     .badges {
         margin-right: -5px;
     }
+    
     .header {
         border-bottom: 1px solid #e9ecef;
     }
+    
     .btn-light {
         float: right;
         background-color: white;
         border: none;
         margin-right: 5px;
     }
+    
     .badge-success {
-        width: 125px;
+        width: 168px;
     }
     
     .badge-danger {
-        width: 125px;
+        width: 170px;
     }
     
     .badge-warning {
-        width: 125px;
+        width: 170px;
     }
     
     .badge-info-marketCap {
@@ -57,4 +65,19 @@
     .badge-light {
         margin-right: 20px;
     }
+
+    .btn.btn-secondary.btn-md {
+        position: absolute;
+        right: 27px;
+        bottom: 25px;
+    }
+    
+    .badge-info-marketCap {
+        width: 170px;
+    }
+    
+    .threeBadgeDiv {
+        padding-top: 30px;
+    }
 }
+

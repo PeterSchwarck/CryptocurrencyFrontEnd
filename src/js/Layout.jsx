@@ -18,8 +18,8 @@ export class Layout extends Flux.View {
                         <Switch>
                             
                             <Route exact path="/aboutus" component={AboutUs} />
-                            <Route exact path="/" component={Scanner} />
-                            <Route exact path="/index.html" component={Scanner} />
+                            <Route exact path="/" component={HomeEdit} />
+                            <Route exact path="/index.html" component={HomeEdit} />
                             <Route exact path="/confirm" component={Confirm} />
                             <Route exact path="/card" component={NotificationCard} />
                             <Route exact path="/home2" component={HomeEdit} />

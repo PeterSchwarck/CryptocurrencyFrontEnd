@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {AddAlert} from '../components/AddAlert';
+import {Link} from 'react-router-dom';
 
 export class AboutUs extends React.Component {
     render(){
@@ -15,7 +16,7 @@ export class AboutUs extends React.Component {
                 <div className="collapse navbar-collapse" id="navbarText">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Home</a>
+                            <Link to='/'className="nav-link" href="#">Home</Link>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#">About us</a>

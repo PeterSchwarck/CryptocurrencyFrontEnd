@@ -8,6 +8,8 @@ import faTrashAlt from '@fortawesome/fontawesome-free-solid/faTrashAlt';
 
 import React from 'react';
 
+import {Link} from 'react-router-dom';
+
 fontawesome.config = {
 autoReplaceSvg: 'nest'
 };
@@ -52,10 +54,10 @@ export class HomeEdit extends React.Component {
                 <div className="collapse navbar-collapse" id="navbarText">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Home</a>
+                            <Link to='/'className="nav-link" href="#">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">About us</a>
+                            <Link to='/aboutus'className="nav-link" href="#">About us</Link>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#">Our data</a>

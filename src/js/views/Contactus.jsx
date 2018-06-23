@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+
 
 
 
@@ -18,10 +20,10 @@ export class ContactUs extends React.Component {
                     <div className="collapse navbar-collapse" id="navbarText">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Home</a>
+                                <Link to='/'className="nav-link" href="#">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">About us</a>
+                                <Link to="/aboutus">AboutUs</Link>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Our data</a>

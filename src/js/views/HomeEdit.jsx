@@ -12,6 +12,9 @@ import React from 'react';
 
 import {AddAlert} from '../components/AddAlert';
 
+import {FooterBar} from '../components/FooterBar';
+
+
 fontawesome.config = {
 autoReplaceSvg: 'nest'
 };
@@ -78,7 +81,8 @@ export class HomeEdit extends React.Component {
                                 </button>
                                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a className="dropdown-item" href="#">1 Million</a>
-                                    <a className="dropdown-item" href="#">10 Million</a>
+                                    <a className="dropdown-item" href="#">1 - 10 Million</a>
+                                    <a className="dropdown-item" href="#">10 - 19 Million</a>
                                     <a className="dropdown-item" href="#">20 Million</a>
                                 </div>
                             </div>
@@ -95,7 +99,6 @@ export class HomeEdit extends React.Component {
                                     </button>
                                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <a className="dropdown-item" href="#">Volume</a>
-                                        <a className="dropdown-item" href="#">Carket cap</a>
                                         <a className="dropdown-item" href="#">Price</a>
                                     </div>
                                 </div>
@@ -115,9 +118,6 @@ export class HomeEdit extends React.Component {
                                     </div>
                                 </div>
                                 <button type="button" className="btn btn-secondary fithButton">Enable notifcations</button>
-                                
-                                
-                                
                                 <button type="button" className="btn btn-light plus">
                                     <i className="fas fa-plus-circle">
                                     </i>
@@ -138,24 +138,8 @@ export class HomeEdit extends React.Component {
                     </div>    
                 </div>
             </div>
-            <footer>
-                <section className="lab_social_icon_footer">
-                    <div className="container">
-                        <div className="text-center center-block">
-                            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i className="fa fa-facebook-square fa-3x social-fb"></i></a>
-                            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><i className="fa fa-twitter-square fa-3x social-tw"></i></a>
-                            <a href="https://plus.google.com/" target="_blank" rel="noopener noreferrer"><i className="fa fa-google-plus-square fa-3x social-gp"></i></a>
-                            <a href="mailto:#"><i className="fa fa-envelope-square fa-3x social-em"></i></a>
-                        </div>
-                        <section>
-                            <div className="footerDiv"> 
-                                <p></p>
-                                Created by CappyCoin, 2018
-                            </div>
-                        </section>  
-                    </div>
-                </section>
-            </footer>
+            <FooterBar />
+            
             <AddAlert />
         </div>;
     }

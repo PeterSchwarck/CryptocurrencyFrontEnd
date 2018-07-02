@@ -9,6 +9,7 @@ import faTrashAlt from '@fortawesome/fontawesome-free-solid/faTrashAlt';
 import logoUrl from '../../img/logo/logo.png';
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 import {AddAlert} from '../components/AddAlert';

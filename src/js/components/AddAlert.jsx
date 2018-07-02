@@ -3,26 +3,22 @@ import React from 'react';
 import MyActions from '../actions/MyActions';
 import MyStore from '../stores/MyStore';
 
+import Flux from '@4geeksacademy/react-flux-dash';
+
 import SmartSelect from '../components/SmartSelect.jsx';
 
-import {Confirm} from '../views/Confirm';
 
-export class AddAlert extends React.Component {
+
+export class AddAlert extends Flux.View {
     constructor() {
         super();
         this.state = {
             email: '',
-            phone: '',
-            show: true
+            phone: ''
         };
         
     }
     
-    hideModal() {
-        this.setState((prevState) => ({
-            show: false
-        }));
-    }
     
     render(){
         
@@ -33,15 +29,9 @@ export class AddAlert extends React.Component {
         ];
         
         
-        // var listTasks = this.state.taks.map( (taskStr, i) => {
-        //     return  <li key={i} className="list-group-item">{taskStr} <span className="deleteButton" onClick={() => this.deleteTask(taskStr)}>x</span></li>;
-        // });
-        
-        
-        
-        return <div className="jumbotron add-alert" style={{display: (this.state.show) ? 'inline-block' : 'none'}}>
+        return <div className="jumbotron add-alert">
             <div className="deleteX">
-                <button onClick={() => this.hideModal()} type="button" className="close" data-dismiss="modal" aria-label="Close">
+                <button onClick={() => this.props.onClose()} type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -54,7 +44,9 @@ export class AddAlert extends React.Component {
                         <p className="lead">Enter your information to recieve alerts on the go.</p>
                         <hr className="my-4"></hr>
                         <form>
-                            <div className="form-groupEmail">Mobile
+                            <div className="form-groupEmail">
+                                <div className="mobileDiv">Mobile
+                                </div>
                                 <span className="form-row align-items-center">
                                     <div className="col-auto my-1">
                                         <label className="mr-sm-2" htmlFor="inlineFormCustomSelect"></label>
@@ -72,7 +64,7 @@ export class AddAlert extends React.Component {
                             </div>
                             <p className="lead">
                                 <a className="btn btn-success btn-lg" href="#" role="button" onClick={() => MyActions.setupNotification({email: this.state.email, phone: this.state.phone})}>  Ok  </a> 
-                                <button onClick={() => this.hideModal()} className="btn btn-secondary btn-lg" href="#" role="button">Cancel</button>
+                                <button onClick={() => this.props.onClose()} type="button" className="btn btn-secondary btn-lg" data-dismiss="modal" href="#" role="button">Cancel</button>
                             </p>
                         </form>
                         <div className="col">
@@ -80,7 +72,6 @@ export class AddAlert extends React.Component {
                     </div>
                 </div>
             </div>
-            <Confirm />
         </div>;
     }
 }

@@ -1,0 +1,17 @@
+.alertSaved {
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    
+    
+    .closeAlert{
+        color: black;
+        position: absolute;
+        right: 10px;
+        top: 0px;
+        background-color: transparent;
+        border: none;
+        font-size: 25px;
+        cursor: pointer;
+    }
+}

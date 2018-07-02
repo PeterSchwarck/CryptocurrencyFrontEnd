@@ -1,28 +1,6 @@
-import fontawesome from '@fortawesome/fontawesome';
-
-import faCaretDown from '@fortawesome/fontawesome-free-solid/faCaretDown';
-
-import faCaretUp from '@fortawesome/fontawesome-free-solid/faCaretUp';
-
-import faEdit from '@fortawesome/fontawesome-free-solid/faEdit';
-
-import faTrashAlt from '@fortawesome/fontawesome-free-solid/faTrashAlt';
-
 import React from 'react';
 
 
-
-    
-fontawesome.config = {
-autoReplaceSvg: 'nest'
-};
-
-fontawesome.library.add(
-    faEdit,
-    faTrashAlt,
-    faCaretUp,
-    faCaretDown
-);
 
 export class NotificationCard extends React.Component {
     constructor() {
@@ -37,6 +15,8 @@ export class NotificationCard extends React.Component {
             show: false
         }));
     }
+    
+    
     
     
     render(){

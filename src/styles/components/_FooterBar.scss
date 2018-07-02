@@ -1,31 +1,5 @@
-.aboutUs {
-    
-    min-height: 400px;
-    margin-bottom: 200px;
-    clear: both;
-    
-    .col-10 {
-        margin-top: 30px;
-    }
-    .styleElement {
-        background-color: #0E0B16;;
-    }
-    .navbar-brand {
-        color: #e7dfdd;
-    }
-    .navbar-toggler-icon {
-        color: #e7dfdd;
-    }
-    a.nav-link {
-        color: #e7dfdd;
-    }
-    
-    h1 {
-        text-shadow: 1px 1px 2px #4717F6;
-        color: #0E0B16;
-        font-size: 50px;
-    }
-    
+.footerBar {
+
     .lab_social_icon_footer {
         position: fixed;
         left: 0;
@@ -37,6 +11,7 @@
 
     .lab_social_icon_footer a {
         color: #333;
+        margin-left: 2px;
     }
 
     .lab_social_icon_footer .social:hover {
@@ -73,8 +48,7 @@
     }
     
     .footerDiv {
-        color: #e7dfdd;
+        color: white;
         text-align: center;
-        
     }
 }

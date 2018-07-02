@@ -17,7 +17,7 @@ class SmartSelect extends React.Component{
         const selectedOpt = <span>{this.props.options[0].label} <img src={'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/flags/1x1/'+this.props.options[0].icon+'.svg'} /></span>;
         return (
             <div className="dropdown smartselect">
-                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button className="btn btn-secondary dropdown-toggle countries" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {selectedOpt}
                 </button>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">

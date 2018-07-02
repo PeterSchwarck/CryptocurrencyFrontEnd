@@ -1,38 +1,13 @@
 // @import "//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css";
 
-.homeEdit {
-   .adBanner{
-       height: 50px;
-       text-align: center;
-       background-color: lightBlue;
-   }
-   
-   h1{
-       text-align: center;
-       border-right: 0;
-       border-left: 0;
-       text-shadow: 1px 1px 2px #4717F6;
-       color: #0E0B16;
-       font-size: 50px;
-       font-weight: bold;
-   }
-   
-   .topDiv{
-        margin-top: 20px;
-   }
-   
-    .logoImg {
-        width: 15%;
-        height: 15%;
-   }
-   
-   img {
-       float: left;
-   }
+.showNotifcation {
    
    .headerDiv {
        border-top: 1px solid #ced4da;
-       
+   }
+   
+   h3 {
+       color: white;
    }
    
    .input-group {

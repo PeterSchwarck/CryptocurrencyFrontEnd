@@ -8,12 +8,17 @@
       color: #e7dfdd;
       border: 1px solid #A239CA;
       display: auto;
-      transform: translate(56%, -62%);
+      transform: translate(56%, -71%);
+      z-index: 11;
        
        h1 {
         text-align: left;
        }
        
+       .mobileDiv {
+       margin-bottom: -20px;
+       margin-left: -5px;
+       }
        
        .deleteX {
         float: right;
@@ -55,6 +60,13 @@
        
        button.close {
         color: #e7dfdd;
+       }
+       
+       .countries {
+        background-image: linear-gradient(#A239CA, #4717F6);
+        font-weight: bold;
+        border: 1px solid #e7dfdd;
+        border-radius: 5px;
        }
   
 }

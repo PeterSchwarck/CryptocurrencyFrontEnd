@@ -7,6 +7,7 @@ import {Scanner} from './views/Introduction.jsx';
 import {ShowNotification} from './components/ShowNotification.jsx';
 import {HomeEdit} from './views/HomeEdit.jsx';
 import {ContactUs} from './views/Contactus.jsx';
+import {TestView}  from './views/TestView.jsx';
 
 export class Layout extends Flux.View {
     render() {
@@ -22,6 +23,7 @@ export class Layout extends Flux.View {
                             <Route exact path="/card" component={ShowNotification} />
                             <Route exact path="/home2" component={HomeEdit} />
                             <Route exact path="/Contactus" component={ContactUs} />
+                            <Route exact path="/Drop" component={TestView} />
                             <Route render={() => <h1>Not found!</h1>} />
                         </Switch>
                     </div>

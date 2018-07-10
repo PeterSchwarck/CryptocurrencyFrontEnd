@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import Flux from '@4geeksacademy/react-flux-dash';
 
-import {Link} from 'react-router-dom';
+
 
 import {AddAlert} from '../components/AddAlert';
 
@@ -22,7 +22,8 @@ export class HomeEdit extends Flux.View {
         super();
             this.state = {
                 showNotificationModal: false,
-                showAlertSaved: false
+                showAlertSaved: false,
+                setting: 'Price'
             };
     }
     
@@ -36,6 +37,12 @@ export class HomeEdit extends Flux.View {
         this.setState((prevState) => ({
             showAlertSaved: !this.state.showAlertSaved
         }));
+    }
+    
+    dropDownChange(param){
+        this.setState({
+            setting: param
+        });
     }
     
     componentDidMount(){

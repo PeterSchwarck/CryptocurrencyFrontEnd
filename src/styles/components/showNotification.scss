@@ -6,180 +6,79 @@
        border-top: 1px solid #ced4da;
    }
    
-   h3 {
+   h5 {
        color: white;
    }
    
-   .input-group {
-       padding-top: 40px;
+   .exis {
+    position: absolute;
+    right: 20px;
+    top: 1px;
+   }
+   
+   .numeroUno {
+       padding-top: 5px;
        padding-bottom: 5px;
        border-left: 5px double #A239CA;
        border-right: 5px double #A239CA;
        border-top: 5px double #A239CA;
        border-bottom: none;
        background-color: #0E0B16;
+       padding-left: 5px;
    }
+   
+   .firstNotificationDiv {
+       padding-top: 5px;
+       padding-bottom: 5px;
+       border-left: 5px double #A239CA;
+       border-right: 5px double #A239CA;
+       border-bottom: 1px solid #A239CA;
+       background-color: #0E0B16;
+       color: lightGrey;
+   }
+   
+    .secondtNotificationDiv {
+       padding-top: 5px;
+       padding-bottom: 5px;
+       border-left: 5px double #A239CA;
+       border-right: 5px double #A239CA;
+       border-bottom: 1px solid #A239CA;
+       background-color: #0E0B16;
+       color: lightGrey;
+   }
+   
+   table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+   
+   
+    td, th {
+        text-align: left;
+        padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+    background-color: #303030;
+    }
+   
+//   .marketCapDiv {
+//       border-top: 1px solid #A239CA;
+//       border-bottom: 1px solid #A239CA;
+//   }
+   
+   
+//   .volumeDiv {
+//       border-top: 1px solid #A239CA;
+//       border-bottom: 1px solid #A239CA;
+//   }
+   
+   
+//   .priceDiv {
+//       border-top: 1px solid #A239CA;
+//       border-bottom: 1px solid #A239CA;
+//   }
 
-    .col-lg-6 {
-        padding-left: 60px;
-        padding-right: 80px;
-    }
-    
-    .col-md-8 {
-        padding-left: 0;
-        padding-right: 0;
-    }
-   
-    .close {
-        color: #e7dfdd;
-        position: absolute;
-        right: 10px;
-        top: 5px;
-    }
-   
-    
-    .searchBar-edit {
-        margin-left: 30px;
-        width: 300px;
-        border-radius: 5px;
-        margin-right: 5px;
-    }
-    
-    .firstbutton {
-        background-image: linear-gradient(#A239CA, #4717F6);
-        font-weight: bold;
-        border: 1px solid #e7dfdd;
-        border-radius: 5px;
-        text-shadow: x-offset y-offset blur color;
-        box-shadow: 0px 2px 0px #e7dfdd, 0px 1px 10px rgba(0,0,0,.4);
-        margin-left: 30px;
-    }
-    
-    .show > .btn-secondary.dropdown-toggle {
-        background-color: #4717F6;
-    }
-    
-    .dropdown-toggle::after {
-        display: inline-block;
-        margin-left: 3.255em;
-    }
-    
-    .btn-light {
-        background-color: white;
-        border-radius: 5px;
-    }
-    
-    .plus {
-        background-color: white;
-        border: none;
-        margin-right: 5px;
-        position: absolute;
-        right: -141px;
-        bottom: 2px;
-    }
-    
-    .trash {
-        background-color: white;
-        border: none;
-        position: absolute;
-        right: -90px;
-        bottom: 2px;
-    }
-    
-    .btn-group > .btn:not(:first-child), .btn-group > .btn-group:not(:first-child) > .btn {
-        border-radius: 5px;
-    }
-    
-    .divBody-edit {
-        padding-top: 25px;
-        display: inline-block;
-        padding-left: 40px;
-        padding-right: 75px;
-        padding-bottom: 25px;
-        border-left: 5px double #A239CA;;
-        border-right: 5px double #A239CA;;
-        width: 100%;
-        background-color: #0E0B16;
-    }
-    
-    .styleElement {
-        background-color: #0E0B16;;
-    }
-    
-    .navbar-toggler-icon {
-        color: #e7dfdd;
-    }
-    
-    a.nav-link {
-        color: #e7dfdd;
-    }
-    
-    .dropdown-content {
-        margin-top: 15px;
-    }
-    
-    .secondButton {
-        background-image: linear-gradient(#A239CA, #4717F6);
-        font-weight: bold;
-        border: 1px solid #e7dfdd;
-        border-radius: 5px;
-        text-shadow: x-offset y-offset blur color;
-        box-shadow: 0px 2px 0px #e7dfdd, 0px 1px 10px rgba(0,0,0,.4);
-        margin-right: 30px;
-        margin-left: -10px;
-    }
-    
-    .thirdButton {
-        background-image: linear-gradient(#A239CA, #4717F6);
-        font-weight: bold;
-        border: 1px solid #e7dfdd;
-        border-radius: 5px;
-        text-shadow: x-offset y-offset blur color;
-        box-shadow: 0px 2px 0px #e7dfdd, 0px 1px 10px rgba(0,0,0,.4);
-        margin-right: 30px;
-    }
-    
-    .fourthButton {
-        background-image: linear-gradient(#A239CA, #4717F6);
-        font-weight: bold;
-        border: 1px solid #e7dfdd;
-        border-radius: 5px;
-        text-shadow: x-offset y-offset blur color;
-        box-shadow: 0px 2px 0px #e7dfdd, 0px 1px 10px rgba(0,0,0,.4);
-    }
-    
-    .fithButton {
-        background-image: linear-gradient(#A239CA);
-        font-weight: bold;
-        border: 1px solid #e7dfdd;
-        border-radius: 5px;
-        text-shadow: x-offset y-offset blur color;
-        box-shadow: 0px 2px 0px #e7dfdd, 0px 1px 10px rgba(0,0,0,.4);
-        background-image: linear-gradient(#E7DFDD, #A239CA);
-        color: #0E0B16;
-    }
-    
-    .sixthButton {
-        background-image: linear-gradient(#A239CA);
-        font-weight: bold;
-        border: 1px solid #e7dfdd;
-        border-radius: 5px;
-        text-shadow: x-offset y-offset blur color;
-        box-shadow: 0px 2px 0px #e7dfdd, 0px 1px 10px rgba(0,0,0,.4);
-        background-image: linear-gradient(#A239CA, #0E0B16);
-    }
-    
-    
-    .bottomDiv {
-        border-right: 5px double #A239CA;
-        border-left: 5px double #A239CA;
-        border-bottom: 5px double #A239CA;
-        background-color: #0E0B16; 
-        padding-top: 20px;
-        padding-left: 30px;
-        padding-bottom: 30px;
-    
-    }
     
 
 }

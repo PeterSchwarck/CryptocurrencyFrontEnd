@@ -1,12 +1,13 @@
 // @import "//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css";
 
 .homeEdit {
-   .adBanner{
-       height: 50px;
-       text-align: center;
-       background-color: lightBlue;
-   }
-   
+    margin-bottom: 200px;
+    margin-top: 72px;
+    
+    .topRow {
+        margin-bottom: 15px;
+    }
+    
    h1{
        text-align: center;
        border-right: 0;
@@ -15,6 +16,19 @@
        color: #0E0B16;
        font-size: 50px;
        font-weight: bold;
+   }
+   
+   .title {
+        border-right: 0;
+        border-left: 0;
+        text-shadow: 1px 1px 2px #4717F6;
+        color: #0E0B16;
+        font-size: 50px;
+        font-weight: bold;
+        position: absolute;
+        bottom: 0;
+        left: 235px;
+        
    }
    
    .topDiv{
@@ -94,22 +108,7 @@
         border-radius: 5px;
     }
     
-    .plus {
-        background-color: white;
-        border: none;
-        margin-right: 5px;
-        position: absolute;
-        right: -141px;
-        bottom: 2px;
-    }
     
-    .trash {
-        background-color: white;
-        border: none;
-        position: absolute;
-        right: -90px;
-        bottom: 2px;
-    }
     
     .btn-group > .btn:not(:first-child), .btn-group > .btn-group:not(:first-child) > .btn {
         border-radius: 5px;
@@ -183,17 +182,6 @@
         background-image: linear-gradient(#E7DFDD, #A239CA);
         color: #0E0B16;
     }
-    
-    .sixthButton {
-        background-image: linear-gradient(#A239CA);
-        font-weight: bold;
-        border: 1px solid #e7dfdd;
-        border-radius: 5px;
-        text-shadow: x-offset y-offset blur color;
-        box-shadow: 0px 2px 0px #e7dfdd, 0px 1px 10px rgba(0,0,0,.4);
-        background-image: linear-gradient(#A239CA, #0E0B16);
-    }
-    
     
     .bottomDiv {
         border-right: 5px double #A239CA;

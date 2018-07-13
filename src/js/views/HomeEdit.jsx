@@ -15,6 +15,10 @@ import {NavBar} from '../components/NavBar';
 
 import {AlertSaved} from '../components/AlertSaved';
 
+import {ShowNotification} from '../components/ShowNotification';
+
+import {AddCurrencyButton} from '../components/AddCurrencyButton';
+
 import MyStore from '../stores/MyStore';
 
 export class HomeEdit extends Flux.View {
@@ -23,7 +27,12 @@ export class HomeEdit extends Flux.View {
             this.state = {
                 showNotificationModal: false,
                 showAlertSaved: false,
+<<<<<<< HEAD
+                showSavedNotifications: false,
+                showAddCurrencyButton: false
+=======
                 setting: 'Price'
+>>>>>>> bf8eeb6a5ea850a5e25be4de35284670017a469b
             };
     }
     
@@ -39,35 +48,60 @@ export class HomeEdit extends Flux.View {
         }));
     }
     
+<<<<<<< HEAD
+    toggleSavedNotifications(){
+        this.setState((prevState) => ({
+            showSavedNotifications: !this.state.showSavedNotifications
+        }));
+    }
+    
+    toggleAddCurrencyButton(){
+        this.setState((prevState) => ({
+            showAddCurrencyButton: !this.state.showAddCurrencyButton
+        }));
+    }
+    
+    
+=======
     dropDownChange(param){
         this.setState({
             setting: param
         });
     }
     
+>>>>>>> bf8eeb6a5ea850a5e25be4de35284670017a469b
     componentDidMount(){
         this.bindStore(MyStore,() => {
             this.toggleNotificationModal();
             this.toggleAlertSaved();
+            this.toggleSavedNotifications();
+            this.toggleSavedNotifications();
         });
     }
     
     render(){
         return <div className="homeEdit">
-            <header>
-                <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"></link>
-            </header>
             <NavBar />
             {
                 (this.state.showAlertSaved) ? <AlertSaved onClose={()=>this.toggleAlertSaved()} />: ''
-            
             }
             <div className="containerDiv container">
                 <div className="row">
-                    <div className="col-12 col-lg-8 col-md-10 mx-auto">
+                    <div className="col-12 col-lg-8 col-md-10 mx-auto topRow">
                         <div className="topDiv">
-                            <img className="logoImg" src={logoUrl}></img><h1>CrappyCoin</h1>
+                            <img className="logoImg" src={logoUrl}></img><div className="title">CrappyCoin</div>
+                            {
+                                (this.state.showAddCurrencyButton) ? <AddCurrencyButton onClose={()=>this.toggleAddCurrencyButton()} />: ''
+                            }
                         </div>
+                    </div>
+                </div>
+                {
+                    (this.state.showSavedNotifications) ? <ShowNotification onClose={()=>this.toggleSavedNotifications()} />: ''
+                }
+                
+                <div className="row">
+                    <div className="col-12 col-lg-8 col-md-10 mx-auto">
                         <div className="input-group">
                             <div>
                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
@@ -93,6 +127,7 @@ export class HomeEdit extends Flux.View {
                         </div>
                     </div>
                 </div>    
+
                 <div className="row">
                     <div className="col-12 col-lg-8 col-md-10 mx-auto">
                         <div className="divBody-edit">

@@ -1,15 +1,21 @@
 import Flux from '@4geeksacademy/react-flux-dash';
+import MyStore from '../stores/MyStore';
+
+const HOST = 'https://final-project-backend-peterschwarck.c9users.io';
 
 class MyActions extends Flux.Action{
     
     setupNotification(info){
         //do whatever your like... and then...
-        
-       fetch('http://assets.breatheco.de/apis/fake/contact/', {
-            method:'put',
+    
+       fetch(HOST + '/notification/', {
+            method:'POST',
             body: JSON.stringify({
                     email: "dave@gmallklkoklil.com",
-                    phone:"7864445566"
+                    phone:"7864445566",
+                    volume_delta:"7864445566",
+                    price_delta:"7864445566",
+                    coin:"7864445566"
             }),
             headers: {
                     'Accept': 'application/json',
@@ -19,7 +25,8 @@ class MyActions extends Flux.Action{
             })
             .then(response => response.json())
             .then((json) => {
-                   console.log(json);
+                   // Dispatch to the store
+                   Flux.dispatch("MyStore.newNotification", json);
             })
             .catch(error => error);
         

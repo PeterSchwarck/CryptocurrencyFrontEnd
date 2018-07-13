@@ -2,27 +2,37 @@ import React from 'react';
 
 import Flux from '@4geeksacademy/react-flux-dash';
 
-class MyStore extends Flux.Store{
-    
-    constructor(){
+class MyStore extends Flux.Store {
+
+    constructor() {
         super();
         this.state = {
-            notificationInfo:  { 
+            notificationInfo: {
                 phone: null,
                 email: null
             },
-            coins: []
+            notification: {
+                coin: "btc",
+                volume_delta: "20%",
+                price_delta: "20%",
+            }
         };
     }
-    
-    _setNotificationInfo(info){
+
+    _setNotificationInfo(info) {
         this.setStoreState({
             notificationInfo: info
         }).emit();
     }
-    
-    getNotificationInfo(){
+
+    getNotificationInfo() {
         return this.state.notificationInfo;
+    }
+
+    _newNotification(data) {
+        this.setStoreState({
+            //
+        }).emit();
     }
 }
 export default new MyStore();

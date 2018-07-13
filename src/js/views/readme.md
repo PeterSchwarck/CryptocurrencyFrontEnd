@@ -7,11 +7,11 @@
     path('coin/search/', views.CoinSearch.as_view(), name="coinSearch"),
     path('session/', views.SessionView.as_view(), name="newSession"),
 
-1) alerts
-    GET : 'alerts/session/<int:session_id>'
+1) NOTIFICATIONS
+    GET : 'notification/?email=eemail@gmail.com&?phone=9393930203
     
-2) NOTIFICATIONS
-    POST: 'alerts/'
+2) 
+    POST: 'notification/'
         body:
         {
             email:
@@ -22,7 +22,7 @@
             price_delta:
         }
    
-    DELETE:  'alerts/<int:session_id>/status/'
+    DELETE:  'notification/?email=eemail@gmail.com&?phone=9393930203
     
 3) search
     GET: 'coin/search/'

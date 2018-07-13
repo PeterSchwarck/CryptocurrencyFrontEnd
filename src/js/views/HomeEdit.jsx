@@ -16,6 +16,8 @@ import {AlertSaved} from '../components/AlertSaved';
 
 import {ShowNotification} from '../components/ShowNotification';
 
+import {AddCurrencyButton} from '../components/AddCurrencyButton';
+
 import MyStore from '../stores/MyStore';
 
 export class HomeEdit extends Flux.View {
@@ -24,7 +26,8 @@ export class HomeEdit extends Flux.View {
             this.state = {
                 showNotificationModal: false,
                 showAlertSaved: false,
-                showSavedNotifications: false
+                showSavedNotifications: false,
+                showAddCurrencyButton: false
             };
     }
     
@@ -46,10 +49,18 @@ export class HomeEdit extends Flux.View {
         }));
     }
     
+    toggleAddCurrencyButton(){
+        this.setState((prevState) => ({
+            showAddCurrencyButton: !this.state.showAddCurrencyButton
+        }));
+    }
+    
+    
     componentDidMount(){
         this.bindStore(MyStore,() => {
             this.toggleNotificationModal();
             this.toggleAlertSaved();
+            this.toggleSavedNotifications();
             this.toggleSavedNotifications();
         });
     }
@@ -62,9 +73,12 @@ export class HomeEdit extends Flux.View {
             }
             <div className="containerDiv container">
                 <div className="row">
-                    <div className="col-12 col-lg-8 col-md-10 mx-auto">
+                    <div className="col-12 col-lg-8 col-md-10 mx-auto topRow">
                         <div className="topDiv">
                             <img className="logoImg" src={logoUrl}></img><div className="title">CrappyCoin</div>
+                            {
+                                (this.state.showAddCurrencyButton) ? <AddCurrencyButton onClose={()=>this.toggleAddCurrencyButton()} />: ''
+                            }
                         </div>
                     </div>
                 </div>

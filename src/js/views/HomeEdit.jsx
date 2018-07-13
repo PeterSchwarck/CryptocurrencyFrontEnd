@@ -27,12 +27,9 @@ export class HomeEdit extends Flux.View {
             this.state = {
                 showNotificationModal: false,
                 showAlertSaved: false,
-<<<<<<< HEAD
                 showSavedNotifications: false,
                 showAddCurrencyButton: false
-=======
-                setting: 'Price'
->>>>>>> bf8eeb6a5ea850a5e25be4de35284670017a469b
+                // setting: 'Price'
             };
     }
     
@@ -48,7 +45,6 @@ export class HomeEdit extends Flux.View {
         }));
     }
     
-<<<<<<< HEAD
     toggleSavedNotifications(){
         this.setState((prevState) => ({
             showSavedNotifications: !this.state.showSavedNotifications
@@ -61,21 +57,18 @@ export class HomeEdit extends Flux.View {
         }));
     }
     
-    
-=======
     dropDownChange(param){
         this.setState({
             setting: param
         });
     }
     
->>>>>>> bf8eeb6a5ea850a5e25be4de35284670017a469b
     componentDidMount(){
         this.bindStore(MyStore,() => {
             this.toggleNotificationModal();
             this.toggleAlertSaved();
             this.toggleSavedNotifications();
-            this.toggleSavedNotifications();
+            this.toggleAddCurrencyButton();
         });
     }
     
@@ -99,8 +92,8 @@ export class HomeEdit extends Flux.View {
                 {
                     (this.state.showSavedNotifications) ? <ShowNotification onClose={()=>this.toggleSavedNotifications()} />: ''
                 }
-                
-                <div className="row">
+                {this.props.show ? (
+                <div className={"row modal fade " + (this.props.show ? "show" : "")}> 
                     <div className="col-12 col-lg-8 col-md-10 mx-auto">
                         <div className="input-group">
                             <div>
@@ -127,7 +120,6 @@ export class HomeEdit extends Flux.View {
                         </div>
                     </div>
                 </div>    
-
                 <div className="row">
                     <div className="col-12 col-lg-8 col-md-10 mx-auto">
                         <div className="divBody-edit">
@@ -172,10 +164,10 @@ export class HomeEdit extends Flux.View {
                 <div className="row">
                     <div className="col-12 col-lg-8 col-md-10 mx-auto">
                         <div className="bottomDiv">
-                            <button type="button" className="btn btn-secondary sixthButton">Add currency</button>
                         </div>
                     </div>    
                 </div>
+                ) : ""}
             </div>
             <FooterBar />
             {

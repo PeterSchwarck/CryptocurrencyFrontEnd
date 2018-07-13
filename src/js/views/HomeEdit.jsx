@@ -1,10 +1,11 @@
 import logoUrl from '../../img/logo/logo.png';
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Flux from '@4geeksacademy/react-flux-dash';
 
-import {Link} from 'react-router-dom';
+
 
 import {AddAlert} from '../components/AddAlert';
 
@@ -26,8 +27,12 @@ export class HomeEdit extends Flux.View {
             this.state = {
                 showNotificationModal: false,
                 showAlertSaved: false,
+<<<<<<< HEAD
                 showSavedNotifications: false,
                 showAddCurrencyButton: false
+=======
+                setting: 'Price'
+>>>>>>> bf8eeb6a5ea850a5e25be4de35284670017a469b
             };
     }
     
@@ -43,6 +48,7 @@ export class HomeEdit extends Flux.View {
         }));
     }
     
+<<<<<<< HEAD
     toggleSavedNotifications(){
         this.setState((prevState) => ({
             showSavedNotifications: !this.state.showSavedNotifications
@@ -56,6 +62,14 @@ export class HomeEdit extends Flux.View {
     }
     
     
+=======
+    dropDownChange(param){
+        this.setState({
+            setting: param
+        });
+    }
+    
+>>>>>>> bf8eeb6a5ea850a5e25be4de35284670017a469b
     componentDidMount(){
         this.bindStore(MyStore,() => {
             this.toggleNotificationModal();

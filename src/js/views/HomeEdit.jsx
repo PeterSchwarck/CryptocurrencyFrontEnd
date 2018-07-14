@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 
 import Flux from '@4geeksacademy/react-flux-dash';
 
-
-
 import {AddAlert} from '../components/AddAlert';
 
 import {FooterBar} from '../components/FooterBar';

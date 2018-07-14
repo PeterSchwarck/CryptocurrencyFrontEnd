@@ -93,7 +93,7 @@ export class HomeEdit extends Flux.View {
                     (this.state.showSavedNotifications) ? <ShowNotification onClose={()=>this.toggleSavedNotifications()} />: ''
                 }
                 {this.props.show ? (
-                <div className={"row modal fade " + (this.props.show ? "show" : "")}> 
+                <div className="row"> 
                     <div className="col-12 col-lg-8 col-md-10 mx-auto">
                         <div className="input-group">
                             <div>

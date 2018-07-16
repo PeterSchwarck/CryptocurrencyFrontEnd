@@ -26,7 +26,7 @@ class MyActions extends Flux.Action{
             .then(response => response.json())
             .then((json) => {
                    // Dispatch to the store
-                   Flux.dispatch("MyStore.newNotification", json);
+                   this.dispatch("MyStore.newNotification", json);
             })
             .catch(error => error);
         
@@ -38,6 +38,22 @@ class MyActions extends Flux.Action{
             'MyStore.setNotificationInfo', info//data to send to the store
         );
     }
+    
+    getCoinsfromHitBtc(){
+        console.log("TRYing");
+        
+        fetch('https://api.hitbtc.com/api/2/public/currency')
+            .then(response => response.json())
+            .then((json) => {
+                console.log("it worked:");
+                console.log(json);
+                   // Dispatch to the store
+                   this.dispatch("MyStore.setCoins", json);
+            })
+            .catch(error => error);
+        
+    }
+    
 }
 
     loadCoins(coin){

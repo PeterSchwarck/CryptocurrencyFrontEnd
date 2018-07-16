@@ -17,7 +17,13 @@ import {ShowNotification} from '../components/ShowNotification';
 
 import {AddCurrencyButton} from '../components/AddCurrencyButton';
 
+import {MarketCapDropDown} from '../components/MarketCapDropDown';
+
+import ReactAutocomplete from 'react-autocomplete';
+
 import MyStore from '../stores/MyStore';
+
+import MyActions from '../actions/MyActions';
 
 export class HomeEdit extends Flux.View {
     constructor(){
@@ -26,10 +32,15 @@ export class HomeEdit extends Flux.View {
                 showNotificationModal: false,
                 showAlertSaved: false,
                 showSavedNotifications: false,
-                showAddCurrencyButton: false
+                showAddCurrencyButton: false,
+                currentTypedCoinName:'',
+                coins: [],
+                filteredCoins: []
                 // setting: 'Price'
             };
     }
+    
+    
     
     toggleNotificationModal() {
         this.setState((prevState) => ({
@@ -61,13 +72,53 @@ export class HomeEdit extends Flux.View {
         });
     }
     
+    handleClear() {
+        this.setState({
+            suggestions: []
+        });
+    }
+    
+    handleChange(input) {
+        this.setState({
+            suggestions: this.state.suggestions.filter(word => word.startsWith(input))
+        });
+    }
+    
+    handleSelection(value) {
+        if (value) {
+            console.info(`Selected "${value}"`);
+        }
+    }
+    
+    handleSearch(value) {
+        if (value) {
+            console.info(`Searching "${value}"`);
+        }
+    }
+    
+    suggestionRenderer(suggestion, searchTerm) {
+        return (
+            <span>
+                <span>{searchTerm}</span>
+                <strong>{suggestion.substr(searchTerm.length)}</strong>
+            </span>
+        );
+    }
+    
+    
+    
     componentDidMount(){
         this.bindStore(MyStore,() => {
             this.toggleNotificationModal();
             this.toggleAlertSaved();
             this.toggleSavedNotifications();
             this.toggleAddCurrencyButton();
+            const coins = MyStore.getCoins();
+            this.setState({
+                coins:coins
+            });
         });
+        MyActions.getCoinsfromHitBtc();
     }
     
     render(){
@@ -90,8 +141,8 @@ export class HomeEdit extends Flux.View {
                 {
                     (this.state.showSavedNotifications) ? <ShowNotification onClose={()=>this.toggleSavedNotifications()} />: ''
                 }
-                {this.props.show ? (
-                <div className="row"> 
+                
+                <div className="row">
                     <div className="col-12 col-lg-8 col-md-10 mx-auto">
                         <div className="input-group">
                             <div>
@@ -99,25 +150,38 @@ export class HomeEdit extends Flux.View {
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <input className="searchBar-edit" type="text" placeholder=" Search..." id="myInput" onKeyUp="filterFunction()"></input>
-                            <button type="button" className="btn btn-light">
-                                <i className="fa fa-search">
-                                </i>
-                            </button>
+                            <ReactAutocomplete
+                                wrapperStyle={{zIndex: 5}}
+                                items={this.state.filteredCoins}
+                                getItemValue={item => item.fullName}
+                                renderItem={(item, highlighted) =>
+                                (<div
+                                    key={item.id}
+                                    style={{ backgroundColor: highlighted ? '#eee' : 'transparent'}}
+                                >
+                                    {item.fullName}
+                                </div>)}
+                                    value={this.state.currentTypedCoinName}
+                                    onChange={e => {
+                                        this.setState({ 
+                                            filteredCoins: this.state.coins.filter(c => c.fullName.toLowerCase().indexOf(e.target.value.toLowerCase()) == 0),
+                                            currentTypedCoinName: e.target.value
+                                        });
+                                    }}
+                                    onSelect={value => this.setState({ value })}
+                            />
+                            <MarketCapDropDown />
+                            
                             <div className="dropdown  d-inline-block">
-                                <button className="btn btn-secondary dropdown-toggle firstbutton" type="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Market cap range
+                                <button type="button" className="btn btn-light">
+                                    <i className="fa fa-search">
+                                    </i>
                                 </button>
-                                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a className="dropdown-item" href="#">1 Million</a>
-                                    <a className="dropdown-item" href="#">1 - 10 Million</a>
-                                    <a className="dropdown-item" href="#">10 - 19 Million</a>
-                                    <a className="dropdown-item" href="#">20 Million</a>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>    
+
                 <div className="row">
                     <div className="col-12 col-lg-8 col-md-10 mx-auto">
                         <div className="divBody-edit">
@@ -151,10 +215,6 @@ export class HomeEdit extends Flux.View {
                                     <i className="fas fa-plus-circle">
                                     </i>
                                 </button>
-                                <button type="button" className="btn btn-light trash">
-                                    <i className="fas fa-trash-alt">
-                                    </i>
-                                </button>
                             </div>    
                         </div>
                     </div>
@@ -165,7 +225,6 @@ export class HomeEdit extends Flux.View {
                         </div>
                     </div>    
                 </div>
-                ) : ""}
             </div>
             <FooterBar />
             {

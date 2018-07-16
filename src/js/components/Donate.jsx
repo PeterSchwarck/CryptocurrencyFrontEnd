@@ -15,7 +15,7 @@ export class Donate extends React.Component{
                                 </button>
                             </div>
                             <div className="modal-body">
-                            GIVE ME MONEY!
+                            Pobrecito yo Pobrecito yo
                             </div>
                             <div className="qrCode">
                                 <img src="https://chart.googleapis.com/chart?chl=https%3A%2F%2Fwww.paypal.com%2Fmyaccount%2Ftransfer%2Fhomepage%2Fsend&chs=200x200&cht=qr&chld=H%7C0" alt="money" height="" width="">

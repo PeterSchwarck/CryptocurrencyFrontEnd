@@ -40,13 +40,6 @@ class MyActions extends Flux.Action{
     }
 }
 
-    loadCoins(coin){
-        
-        fetch('https://api.hitbtc.com/api/2/public/symbol'),{
-        method: 'GET'
-        
-    }
-
 
 
 

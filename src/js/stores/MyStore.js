@@ -15,7 +15,8 @@ class MyStore extends Flux.Store {
                 coin: "btc",
                 volume_delta: "20%",
                 price_delta: "20%",
-            }
+            },
+            coins: []
         };
     }
 
@@ -33,6 +34,14 @@ class MyStore extends Flux.Store {
         this.setStoreState({
             //
         }).emit();
+    }
+    
+    _setCoins(coins){
+        this.setStoreState({ coins }).emit();
+    }
+    
+    getCoins(){
+        return this.state.coins;
     }
 }
 export default new MyStore();

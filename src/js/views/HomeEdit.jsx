@@ -18,6 +18,11 @@ import {ShowNotification} from '../components/ShowNotification';
 import {AddCurrencyButton} from '../components/AddCurrencyButton';
 
 import {MarketCapDropDown} from '../components/MarketCapDropDown';
+<<<<<<< HEAD
+=======
+import {DropDown1} from '../components/dropDown1';
+import {DropDown2} from '../components/dropDown2';
+>>>>>>> 39104b35a0e77459c8137d70a60c95fb9c382d37
 
 import ReactAutocomplete from 'react-autocomplete';
 
@@ -170,7 +175,11 @@ export class HomeEdit extends Flux.View {
                                     }}
                                     onSelect={value => this.setState({ value })}
                             />
+<<<<<<< HEAD
                             
+=======
+                            <MarketCapDropDown />
+>>>>>>> 39104b35a0e77459c8137d70a60c95fb9c382d37
                             
                             <div className="dropdown  d-inline-block">
                                 <button type="button" className="btn btn-light">
@@ -187,28 +196,10 @@ export class HomeEdit extends Flux.View {
                         <div className="divBody-edit">
                             <div className="btn-group">
                                 <div className="dropdown  d-inline-block">
-                                    <button className="btn btn-secondary dropdown-toggle secondButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Settings
-                                    </button>
-                                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a className="dropdown-item" href="#">Volume</a>
-                                        <a className="dropdown-item" href="#">Price</a>
-                                    </div>
+                                   <DropDown1 />
                                 </div>
                                 <div className="dropdown  d-inline-block">
-                                    <button className="btn btn-secondary dropdown-toggle thirdButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Delta
-                                    </button>
-                                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a className="dropdown-item" href="#">30%</a>
-                                        <a className="dropdown-item" href="#">20%</a>
-                                        <a className="dropdown-item" href="#">10%</a>
-                                        <a className="dropdown-item" href="#">5%</a>
-                                        <a className="dropdown-item" href="#">0%</a>
-                                        <a className="dropdown-item" href="#">-5%</a>
-                                        <a className="dropdown-item" href="#">-10%</a>
-                                        <a className="dropdown-item" href="#">-20%</a>
-                                    </div>
+                                    <DropDown2 />
                                 </div>
                                 <button type="button" className="btn btn-secondary fithButton" onClick={() => this.toggleNotificationModal()}>Enable notifcations</button>
                                 <button type="button" className="btn btn-light plus">

@@ -170,7 +170,7 @@ export class HomeEdit extends Flux.View {
                                     }}
                                     onSelect={value => this.setState({ value })}
                             />
-                            <MarketCapDropDown />
+                            
                             
                             <div className="dropdown  d-inline-block">
                                 <button type="button" className="btn btn-light">

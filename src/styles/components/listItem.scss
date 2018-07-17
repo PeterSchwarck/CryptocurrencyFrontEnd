@@ -1,0 +1,65 @@
+// @import "//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css";
+
+.notificationListItem {
+   
+   .headerDiv {
+       border-top: 1px solid #ced4da;
+   }
+   
+   h5 {
+       color: white;
+   }
+   
+   .exis {
+    position: absolute;
+    right: 20px;
+    top: 1px;
+   }
+   
+   .numeroUno {
+       padding-top: 5px;
+       padding-bottom: 5px;
+       border-left: 5px double #A239CA;
+       border-right: 5px double #A239CA;
+       border-top: 5px double #A239CA;
+       border-bottom: none;
+       background-color: #0E0B16;
+       padding-left: 5px;
+   }
+   
+   .firstNotificationDiv {
+       padding-top: 5px;
+       padding-bottom: 5px;
+       border-left: 5px double #A239CA;
+       border-right: 5px double #A239CA;
+       border-bottom: 1px solid #A239CA;
+       background-color: #0E0B16;
+       color: lightGrey;
+   }
+   
+    .secondtNotificationDiv {
+       padding-top: 5px;
+       padding-bottom: 5px;
+       border-left: 5px double #A239CA;
+       border-right: 5px double #A239CA;
+       border-bottom: 1px solid #A239CA;
+       background-color: #0E0B16;
+       color: lightGrey;
+   }
+   
+   table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+   
+   
+    td, th {
+        text-align: left;
+        padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+    background-color: #303030;
+    }
+    
+}

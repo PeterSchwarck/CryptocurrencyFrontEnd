@@ -32,16 +32,11 @@ export class HomeEdit extends Flux.View {
                 showNotificationModal: false,
                 showAlertSaved: false,
                 showSavedNotifications: false,
-<<<<<<< HEAD
-                showAddCurrencyButton: false
-                
-=======
                 showAddCurrencyButton: false,
                 currentTypedCoinName:'',
                 coins: [],
                 filteredCoins: []
                 // setting: 'Price'
->>>>>>> a0cae83e46dc27894a85f7fb128fd3b3e94f0ed8
             };
     }
     
@@ -127,9 +122,7 @@ export class HomeEdit extends Flux.View {
     }
     
     render(){
-        return 
-        <div>
-        <div className="homeEdit">
+        return <div className="homeEdit">
             <NavBar />
             {
                 (this.state.showAlertSaved) ? <AlertSaved onClose={()=>this.toggleAlertSaved()} />: ''
@@ -148,13 +141,8 @@ export class HomeEdit extends Flux.View {
                 {
                     (this.state.showSavedNotifications) ? <ShowNotification onClose={()=>this.toggleSavedNotifications()} />: ''
                 }
-<<<<<<< HEAD
-                {this.props.show ? (
-                <div className={"row modal fade " + (this.props.show ? "show" : "")}> 
-=======
                 
                 <div className="row">
->>>>>>> a0cae83e46dc27894a85f7fb128fd3b3e94f0ed8
                     <div className="col-12 col-lg-8 col-md-10 mx-auto">
                         <div className="input-group">
                             <div>
@@ -193,11 +181,7 @@ export class HomeEdit extends Flux.View {
                         </div>
                     </div>
                 </div>    
-<<<<<<< HEAD
-                
-=======
 
->>>>>>> a0cae83e46dc27894a85f7fb128fd3b3e94f0ed8
                 <div className="row">
                     <div className="col-12 col-lg-8 col-md-10 mx-auto">
                         <div className="divBody-edit">
@@ -235,7 +219,6 @@ export class HomeEdit extends Flux.View {
                         </div>
                     </div>
                 </div>
-        
                 <div className="row">
                     <div className="col-12 col-lg-8 col-md-10 mx-auto">
                         <div className="bottomDiv">
@@ -247,7 +230,6 @@ export class HomeEdit extends Flux.View {
             {
                 (this.state.showNotificationModal) ? <AddAlert onClose={()=>this.toggleNotificationModal()}  />:''
             }
-        </div>
         </div>;
     }
 }

@@ -54,6 +54,12 @@ class MyActions extends Flux.Action{
         
     }
     
+    addMenu(){
+    let menuItem = MyStore.getMenuItem();
+    menuItem.push();
+    
+    this.dispatch('MyStore.setMenuItem'.menuItem);
+    }
     addSettings(setting, delta){
         
         let settings = MyStore.getSettings();
@@ -65,9 +71,6 @@ class MyActions extends Flux.Action{
     }
     
 }
-
-   
-
 
 
 

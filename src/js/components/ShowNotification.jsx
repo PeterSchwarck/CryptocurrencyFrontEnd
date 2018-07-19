@@ -23,15 +23,20 @@ export class ShowNotification extends React.Component {
             <div className="row">
                 <div className="col-12 col-lg-8 col-md-10 mx-auto">
                     <div className="firstNotificationDiv">
-                        <table>
+                        <table className="thaTable">
                             <tr>
                                 <th>Coin</th>
                                 <th>Volume</th>
                                 <th>Price</th>
                                 <th>Delete</th>
                             </tr>
-                            
-                            <ListItem />
+                        </table>
+                        <table>
+                            <tr>
+                                <th>
+                                <ListItem />
+                                </th>
+                            </tr>
                         </table>
                         
                         

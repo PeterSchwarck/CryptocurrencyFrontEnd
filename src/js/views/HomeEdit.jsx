@@ -19,8 +19,7 @@ import {AddCurrencyButton} from '../components/AddCurrencyButton';
 
 
 
-import {DropDown1} from '../components/dropDown1';
-import {DropDown2} from '../components/dropDown2';
+import {HomeEditToggle} from '../components/HomeEditToggle';
 
 import ReactAutocomplete from 'react-autocomplete';
 
@@ -117,6 +116,10 @@ export class HomeEdit extends Flux.View {
         );
     }
     
+    handleAddMenu(){
+        MyActions.addMenu();
+    }
+    
     
     
     componentDidMount(){
@@ -129,7 +132,11 @@ export class HomeEdit extends Flux.View {
             this.setState({
                 coins:coins
             });
+            this.setState({
+                menuItem: MyStore.getMenuItem()
+            });
         });
+        
         MyActions.getCoinsfromHitBtc();
     }
     
@@ -182,8 +189,6 @@ export class HomeEdit extends Flux.View {
                                     }}
                                     onSelect={value => this.setState({ value })}
                             />
-
-                            
                             <div className="dropdown  d-inline-block">
                                 <button type="button" className="btn btn-light">
                                     <i className="fa fa-search">
@@ -197,35 +202,25 @@ export class HomeEdit extends Flux.View {
                 <div className="row">
                     <div className="col-12 col-lg-8 col-md-10 mx-auto">
                         <div className="divBody-edit">
-                            <div className="btn-group">
-                                <div className="dropdown  d-inline-block">
-                                   <DropDown1
-                                   onChange={(e) => this.dropDownChange(e)} />
-                                </div>
-                                <div className="dropdown  d-inline-block">
-                                    <DropDown2 
-                                    onChange={(e) => this.dropDownChange1(e)} />
-                                </div>
-                                <button type="button" className="btn btn-secondary fithButton" onClick={() =>{
+                                
+                        </div>
+                    </div>
+                </div>
+                <HomeEditToggle />
+                <HomeEditToggle />
+                <div className="row">
+                    <div className="col-12 col-lg-8 col-md-10 mx-auto">
+                        <div className="bottomDiv">
+                         <button type="button" className="btn btn-secondary fithButton" onClick={() =>{
                                  this.handleAddSettings();
                                  this.toggleNotificationModal();
                                     
                                 }}>Enable notifcations</button>
-                                <button type="button" className="btn btn-light plus">
-                                    <i className="fas fa-plus-circle">
-                                    </i>
-                                </button>
-                            </div>    
-                        </div>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-12 col-lg-8 col-md-10 mx-auto">
-                        <div className="bottomDiv">
                         </div>
                     </div>    
                 </div>
             </div>
+            
             <FooterBar />
             {
                 (this.state.showNotificationModal) ? <AddAlert onClose={()=>this.toggleNotificationModal()}  />:''

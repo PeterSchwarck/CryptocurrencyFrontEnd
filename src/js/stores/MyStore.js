@@ -12,12 +12,12 @@ class MyStore extends Flux.Store {
                 email: null
             },
             notification: {
-               
                 setting: '',
-                delta: '',
+                delta: ''
                 
             },
-            coins: []
+            coins: [],
+            menuItem: []
         };
     }
 
@@ -55,5 +55,18 @@ class MyStore extends Flux.Store {
     getCoins(){
         return this.state.coins;
     }
+    
+    setMenuItem(newMenu){
+        this.setStoreState({
+            menuItem: newMenu
+        }).emit();
+    }
+    
+    getMenuItem(){
+        return this.state.menuItem;
+    }
+    
+    
+    
 }
 export default new MyStore();

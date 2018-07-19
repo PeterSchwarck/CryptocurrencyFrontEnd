@@ -17,7 +17,7 @@ import {ShowNotification} from '../components/ShowNotification';
 
 import {AddCurrencyButton} from '../components/AddCurrencyButton';
 
-import {MarketCapDropDown} from '../components/MarketCapDropDown';
+
 
 import {DropDown1} from '../components/dropDown1';
 import {DropDown2} from '../components/dropDown2';

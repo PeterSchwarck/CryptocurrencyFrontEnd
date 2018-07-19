@@ -18,6 +18,7 @@ import {ShowNotification} from '../components/ShowNotification';
 import {AddCurrencyButton} from '../components/AddCurrencyButton';
 
 import {MarketCapDropDown} from '../components/MarketCapDropDown';
+
 import {DropDown1} from '../components/dropDown1';
 import {DropDown2} from '../components/dropDown2';
 
@@ -181,7 +182,7 @@ export class HomeEdit extends Flux.View {
                                     }}
                                     onSelect={value => this.setState({ value })}
                             />
-                            
+
                             
                             <div className="dropdown  d-inline-block">
                                 <button type="button" className="btn btn-light">

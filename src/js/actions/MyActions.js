@@ -54,13 +54,13 @@ class MyActions extends Flux.Action{
         
     }
     
+    addMenu(){
+    let menuItem = MyStore.getMenuItem();
+    menuItem.push();
+    
+    this.dispatch('MyStore.setMenuItem'.menuItem);
+    }
 }
-<<<<<<< HEAD
-=======
-
-   
->>>>>>> 39104b35a0e77459c8137d70a60c95fb9c382d37
-
 
 
 

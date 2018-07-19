@@ -17,12 +17,9 @@ import {ShowNotification} from '../components/ShowNotification';
 
 import {AddCurrencyButton} from '../components/AddCurrencyButton';
 
-import {MarketCapDropDown} from '../components/MarketCapDropDown';
-<<<<<<< HEAD
-=======
 import {DropDown1} from '../components/dropDown1';
 import {DropDown2} from '../components/dropDown2';
->>>>>>> 39104b35a0e77459c8137d70a60c95fb9c382d37
+import {HomeEditToggle} from '../components/HomeEditToggle';
 
 import ReactAutocomplete from 'react-autocomplete';
 
@@ -110,6 +107,10 @@ export class HomeEdit extends Flux.View {
         );
     }
     
+    handleAddMenu(){
+        MyActions.addMenu();
+    }
+    
     
     
     componentDidMount(){
@@ -122,7 +123,11 @@ export class HomeEdit extends Flux.View {
             this.setState({
                 coins:coins
             });
+            this.setState({
+                menuItem: MyStore.getMenuItem()
+            });
         });
+        
         MyActions.getCoinsfromHitBtc();
     }
     
@@ -175,11 +180,6 @@ export class HomeEdit extends Flux.View {
                                     }}
                                     onSelect={value => this.setState({ value })}
                             />
-<<<<<<< HEAD
-                            
-=======
-                            <MarketCapDropDown />
->>>>>>> 39104b35a0e77459c8137d70a60c95fb9c382d37
                             
                             <div className="dropdown  d-inline-block">
                                 <button type="button" className="btn btn-light">
@@ -202,7 +202,7 @@ export class HomeEdit extends Flux.View {
                                     <DropDown2 />
                                 </div>
                                 <button type="button" className="btn btn-secondary fithButton" onClick={() => this.toggleNotificationModal()}>Enable notifcations</button>
-                                <button type="button" className="btn btn-light plus">
+                                <button onClick={() =>this.handleAddMenu()} type="button" className="btn btn-light plus">
                                     <i className="fas fa-plus-circle">
                                     </i>
                                 </button>
@@ -217,6 +217,7 @@ export class HomeEdit extends Flux.View {
                     </div>    
                 </div>
             </div>
+            
             <FooterBar />
             {
                 (this.state.showNotificationModal) ? <AddAlert onClose={()=>this.toggleNotificationModal()}  />:''

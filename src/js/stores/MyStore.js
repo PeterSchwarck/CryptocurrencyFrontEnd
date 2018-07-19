@@ -14,9 +14,10 @@ class MyStore extends Flux.Store {
             notification: {
                 coin: "btc",
                 volume_delta: "20%",
-                price_delta: "20%",
+                price_delta: "20%"
             },
-            coins: []
+            coins: [],
+            menuItem: []
         };
     }
 
@@ -43,5 +44,18 @@ class MyStore extends Flux.Store {
     getCoins(){
         return this.state.coins;
     }
+    
+    setMenuItem(newMenu){
+        this.setStoreState({
+            menuItem: newMenu
+        }).emit();
+    }
+    
+    getMenuItem(){
+        return this.state.menuItem;
+    }
+    
+    
+    
 }
 export default new MyStore();

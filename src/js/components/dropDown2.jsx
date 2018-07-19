@@ -7,22 +7,30 @@ export class DropDown2 extends React.Component {
     super(props);
     this.state = {value: '0%'};
 
-    this.handleChange = this.handleChange.bind(this);
+    
     
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-    console.log(this.state);
+   componentDidMount(){
+    this.props.onChange(this.state.value);
   }
-
 
   render() {
     return (
+    <div className='dropDown3'>
       <form onSubmit={this.handleSubmit}>
         <label>
+        <span className='label1'>
           Settings:
-          <select value={this.state.value} onChange={(e) => this.handleChange(e)}>
+        </span>
+            <select className= 'delta'
+          value={this.state.value} 
+          onChange={(e)=>{
+            this.props.onChange(e.target.value);
+            this.setState({
+              value: e.target.value
+            });
+          }}>
             <option value="30%">30%</option>
             <option value="25%">25%</option>
             <option value="20%">20%</option>
@@ -38,6 +46,11 @@ export class DropDown2 extends React.Component {
         </label>
         
       </form>
+    </div>
     );
   }
 }
+
+DropDown2.propTypes = {
+  onChange: PropTypes.func
+};

@@ -20,6 +20,7 @@ import {AddCurrencyButton} from '../components/AddCurrencyButton';
 import {DropDown1} from '../components/dropDown1';
 import {DropDown2} from '../components/dropDown2';
 import {HomeEditToggle} from '../components/HomeEditToggle';
+import {MarketCapDropDown} from '../components/MarketCapDropDown';
 
 import ReactAutocomplete from 'react-autocomplete';
 
@@ -37,12 +38,15 @@ export class HomeEdit extends Flux.View {
                 showAddCurrencyButton: false,
                 currentTypedCoinName:'',
                 coins: [],
-                filteredCoins: []
-                // setting: 'Price'
+                filteredCoins: [],
+                setting: 'price_delta',
+                delta:'0%'
             };
     }
     
-    
+    handleAddSettings(){
+        MyActions.addSettings(this.state.setting,this.state.delta);
+    }
     
     toggleNotificationModal() {
         this.setState((prevState) => ({
@@ -71,6 +75,12 @@ export class HomeEdit extends Flux.View {
     dropDownChange(param){
         this.setState({
             setting: param
+        });
+    }
+    
+      dropDownChange1(param){
+        this.setState({
+            delta: param
         });
     }
     
@@ -180,7 +190,6 @@ export class HomeEdit extends Flux.View {
                                     }}
                                     onSelect={value => this.setState({ value })}
                             />
-                            
                             <div className="dropdown  d-inline-block">
                                 <button type="button" className="btn btn-light">
                                     <i className="fa fa-search">
@@ -196,13 +205,21 @@ export class HomeEdit extends Flux.View {
                         <div className="divBody-edit">
                             <div className="btn-group">
                                 <div className="dropdown  d-inline-block">
-                                   <DropDown1 />
+                                   <DropDown1
+                                   onChange={(e) => this.dropDownChange(e)} />
                                 </div>
                                 <div className="dropdown  d-inline-block">
-                                    <DropDown2 />
+                                    <DropDown2 
+                                    onChange={(e) => this.dropDownChange1(e)} />
                                 </div>
                                 <button type="button" className="btn btn-secondary fithButton" onClick={() => this.toggleNotificationModal()}>Enable notifcations</button>
-                                <button onClick={() =>this.handleAddMenu()} type="button" className="btn btn-light plus">
+                                <button onClick={() =>this.handleAddMenu()} type="button" className="btn btn-light plus"></button>
+                                <button type="button" className="btn btn-secondary fithButton" onClick={() =>{
+                                 this.handleAddSettings();
+                                 this.toggleNotificationModal();
+                                    
+                                }}>Enable notifcations</button>
+                                <button type="button" className="btn btn-light plus">
                                     <i className="fas fa-plus-circle">
                                     </i>
                                 </button>

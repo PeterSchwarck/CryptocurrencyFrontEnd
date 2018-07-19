@@ -60,6 +60,16 @@ class MyActions extends Flux.Action{
     
     this.dispatch('MyStore.setMenuItem'.menuItem);
     }
+    addSettings(setting, delta){
+        
+        let settings = MyStore.getSettings();
+        settings.setting=setting;
+        settings.delta=delta;
+        this.dispatch('MyStore.setSetting', settings);
+        
+        
+    }
+    
 }
 
 

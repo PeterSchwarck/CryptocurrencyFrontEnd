@@ -12,9 +12,9 @@ class MyStore extends Flux.Store {
                 email: null
             },
             notification: {
-                coin: "btc",
-                volume_delta: "20%",
-                price_delta: "20%"
+                setting: '',
+                delta: ''
+                
             },
             coins: [],
             menuItem: []
@@ -25,6 +25,17 @@ class MyStore extends Flux.Store {
         this.setStoreState({
             notificationInfo: info
         }).emit();
+    }
+    
+    _setSetting(value){
+        this.setStoreState({
+            notfication : value
+        }).emit();
+        console.log(this.state.notification);
+    }
+    
+    getSettings(){
+        return this.state.notification;
     }
 
     getNotificationInfo() {

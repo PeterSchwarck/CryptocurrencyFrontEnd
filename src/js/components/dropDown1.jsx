@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import MyActions from '../actions/MyActions';
 
 
 export class DropDown1 extends React.Component {
@@ -7,24 +8,31 @@ export class DropDown1 extends React.Component {
     super(props);
     this.state = {value: 'price_delta'};
 
-    this.handleChange = this.handleChange.bind(this);
+    
     
   }
-
-  handleChange(event) {
-    console.log('hello');
-    this.setState({value: event.target.value});
-    console.log(this.state);
+  
+  componentDidMount(){
+    this.props.onChange(this.state.value);
   }
+
+ 
 
 
   render() {
     return (
-    <div className='dropdown2'>
+    <div className='dropDown2'>
       <form onSubmit={this.handleSubmit}>
         <label>
           Settings:
-          <select value={this.state.value} onChange={(e)=>this.handleChange(e)}>
+          <select className= 'settings'
+          value={this.state.value} 
+          onChange={(e)=>{
+            this.props.onChange(e.target.value);
+            this.setState({
+              value: e.target.value
+            });
+          }}>
             <option className="dropdown-item" value="price_delta">Price</option>
             <option value="volume_delta">Volume</option>
           
@@ -36,3 +44,7 @@ export class DropDown1 extends React.Component {
     );
   }
 }
+
+DropDown1.propTypes = {
+  onChange: PropTypes.func
+};

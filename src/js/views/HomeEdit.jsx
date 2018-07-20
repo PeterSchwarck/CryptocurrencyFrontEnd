@@ -151,7 +151,7 @@ export class HomeEdit extends Flux.View {
                     <div className="col-12 col-lg-8 col-md-10 mx-auto topRow">
                         <div className="topDiv">
                             <img className="logoImg" src={logoUrl}></img><div className="title">CrappyCoin</div>
-                            {
+                           {
                                 (this.state.showAddCurrencyButton) ? <AddCurrencyButton onClose={()=>this.toggleAddCurrencyButton()} />: ''
                             }
                         </div>
@@ -162,21 +162,26 @@ export class HomeEdit extends Flux.View {
                 }
                 
                 <div className="row">
-                    <div className="col-12 col-lg-8 col-md-10 mx-auto">
-                        <div className="input-group">
+                    <div className="col-12 col-lg-8 col-md-10 mx-auto col-centered">
+                        <div className="input-group col-centered">
                             <div>
                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <ReactAutocomplete
+                            <span className='col-center'>
+                            <ReactAutocomplete 
+                                style={{width:100}}
                                 wrapperStyle={{zIndex: 5}}
                                 items={this.state.filteredCoins}
                                 getItemValue={item => item.fullName}
                                 renderItem={(item, highlighted) =>
                                 (<div
                                     key={item.id}
-                                    style={{ backgroundColor: highlighted ? '#eee' : 'transparent'}}
+                                    style={{ backgroundColor: highlighted ? '#eee' : 'transparent',
+                                             width:100
+                                          
+                                    }}
                                 >
                                     {item.fullName}
                                 </div>)}
@@ -189,6 +194,7 @@ export class HomeEdit extends Flux.View {
                                     }}
                                     onSelect={value => this.setState({ value })}
                             />
+                            </span>
                             <div className="dropdown  d-inline-block">
                                 <button type="button" className="btn btn-light">
                                     <i className="fa fa-search">
@@ -206,8 +212,10 @@ export class HomeEdit extends Flux.View {
                         </div>
                     </div>
                 </div>
-                <HomeEditToggle />
-                <HomeEditToggle />
+               
+                        <HomeEditToggle />
+                        <HomeEditToggle />
+                 
                 <div className="row">
                     <div className="col-12 col-lg-8 col-md-10 mx-auto">
                         <div className="bottomDiv">

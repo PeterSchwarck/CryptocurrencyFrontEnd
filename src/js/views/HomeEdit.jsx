@@ -15,8 +15,6 @@ import {AlertSaved} from '../components/AlertSaved';
 
 import {ShowNotification} from '../components/ShowNotification';
 
-import {AddCurrencyButton} from '../components/AddCurrencyButton';
-
 import {HomeEditToggle} from '../components/HomeEditToggle';
 
 import ReactAutocomplete from 'react-autocomplete';
@@ -36,7 +34,7 @@ export class HomeEdit extends Flux.View {
                 filteredCoins: [],
                 setting: 'price_delta',
                 delta:'0%',
-                notificationList: []
+                notificationList: ['coin1']
             };
     }
     
@@ -63,7 +61,7 @@ export class HomeEdit extends Flux.View {
         });
     }
     
-      dropDownChange1(param){
+    dropDownChange1(param){
         this.setState({
             delta: param
         });
@@ -139,9 +137,6 @@ export class HomeEdit extends Flux.View {
                     <div className="col-12 col-lg-8 col-md-10 mx-auto topRow">
                         <div className="topDiv">
                             <img className="logoImg" src={logoUrl}></img><div className="title">CrappyCoin</div>
-                           {
-                                (this.state.showAddCurrencyButton) ? <AddCurrencyButton onClose={()=>this.toggleAddCurrencyButton()} />: ''
-                            }
                         </div>
                     </div>
                 </div>
@@ -155,10 +150,13 @@ export class HomeEdit extends Flux.View {
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
+                            <div className="titleHeader">
+                                <h3>Enter a Coin to Search</h3> 
+                            </div>
                             <span className='col-center'>
                             <ReactAutocomplete 
                                 style={{width:100}}
-                                wrapperStyle={{zIndex: 5}}
+                                wrapperStyle={{zIndex: 1000}}
                                 items={this.state.filteredCoins}
                                 getItemValue={item => item.fullName}
                                 renderItem={(item, highlighted) =>
@@ -194,16 +192,6 @@ export class HomeEdit extends Flux.View {
                 </div>    
 
                 {listOfNotification}
-                <div className="row">
-                    <div className="col-12 col-lg-8 col-md-10 mx-auto">
-                        <div className="divBody-edit">
-                                
-                        </div>
-                    </div>
-                </div>
-               
-                        <HomeEditToggle />
-                        <HomeEditToggle />
                  
                 <div className="row">
                     <div className="col-12 col-lg-8 col-md-10 mx-auto">

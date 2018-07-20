@@ -10,8 +10,6 @@ import {NavBar} from '../components/NavBar';
 export class AboutUs extends React.Component {
     render(){
         return <div className="aboutUs"> 
-            <div className="adBanner">Ad Banner!
-            </div>
             <NavBar />
             <div className="container">
                 <div className="row">

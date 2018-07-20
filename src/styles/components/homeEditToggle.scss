@@ -1,5 +1,6 @@
 .homeEditToggle {
     
+    
     .toggleBody {
         border-right: 5px double #A239CA;
         border-left: 5px double #A239CA;
@@ -7,5 +8,24 @@
         padding-top: 20px;
         padding-left: 30px;
         padding-bottom: 30px;
+        color: white;
+    }
+    
+    .clone {
+        margin-left: 90px;
+        margin-bottom: 4px;
+        margin-right: 10px;
+    }
+    
+    .two {
+        margin-bottom: 4px;
+        margin-left: 115px;
+    }
+    
+    .coinName {
+        font-size: 20px;
+        text-align: center;
+        padding-bottom: 10px;
+        font-weight: bold
     }
 }

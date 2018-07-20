@@ -2,9 +2,6 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import {ListItem} from '../components/ListItem';
-
-
 export class ShowNotification extends React.Component {
     render(){
         return <div className="showNotifcation">
@@ -23,25 +20,34 @@ export class ShowNotification extends React.Component {
             <div className="row">
                 <div className="col-12 col-lg-8 col-md-10 mx-auto">
                     <div className="firstNotificationDiv">
-                        <table className="thaTable">
+                        <table>
                             <tr>
                                 <th>Coin</th>
-                                <th>Volume</th>
+                                <th>Volume</th> 
                                 <th>Price</th>
                                 <th>Delete</th>
                             </tr>
-                        </table>
-                        <table>
                             <tr>
-                                <th>
-                                <ListItem />
-                                </th>
-                            </tr>
+                                <td>Coin 1</td>
+                                <td><span className="badge badge-success">5%</span></td>
+                                <td><span className="badge badge-danger">-17%</span></td> 
+                                <td>
+                                    <button onClick={() => this.props.onDelete()} type="button" className="btn btn-light trash two">
+                                        <i className="far fa-trash-alt"></i>
+                                    </button>
+                                </td>
+                             </tr>
+                              <tr>
+                                <td>Coin 2</td>
+                                <td><span className="badge badge-success">10%</span></td>
+                                <td><span className="badge badge-danger">-25%</span></td> 
+                                <td>
+                                    <button onClick={() => this.props.onDelete()} type="button" className="btn btn-light trash two">
+                                        <i className="far fa-trash-alt"></i>
+                                    </button>
+                                </td>
+                             </tr>
                         </table>
-                        
-                        
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -52,5 +58,6 @@ export class ShowNotification extends React.Component {
 }
 
 ShowNotification.propTypes = {
-  onClose: PropTypes.func
+  onClose: PropTypes.func,
+  onDelete: PropTypes.func
 };

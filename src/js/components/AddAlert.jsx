@@ -25,7 +25,6 @@ export class AddAlert extends Flux.View {
         const countries = [
             {label: 'USA', icon: 'us' },
             {label: 'Venezuela', icon: 've' },
-            {label: 'Germany', icon: 'ge' }
         ];
         
         
@@ -40,7 +39,7 @@ export class AddAlert extends Flux.View {
                     <div className="col">
                     </div>
                     <div className="col-10">
-                        <h1 className="display-4">Enable notifications</h1>
+                        <h1 className="display-4">Add alerts</h1>
                         <p className="lead">Enter your information to recieve alerts on the go.</p>
                         <hr className="my-4"></hr>
                         <form>

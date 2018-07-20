@@ -21,7 +21,7 @@ export class DropDown2 extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
         <span className='label1'>
-          Settings:
+          Delta:
         </span>
             <select className= 'delta'
           value={this.state.value} 

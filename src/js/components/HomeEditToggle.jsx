@@ -29,21 +29,26 @@ export class HomeEditToggle extends React.Component {
             <div className="row">
                 <div className="col-12 col-lg-8 col-md-10 mx-auto">
                     <div className="toggleBody">
-                       <div className="btn-group">
-                            <div className="dropdown  d-inline-block">
-                               <DropDown1
-                               onChange={(e) => this.dropDownChange(e)} />
+                        <div className="coinName">
+                        Coin 1
+                        </div>
+                        <div>
+                            <div className="btn-group">
+                                <div className="dropdown  d-inline-block">
+                                   <DropDown1
+                                   onChange={(e) => this.dropDownChange(e)} />
+                                </div>
+                                <div className="dropdown  d-inline-block">
+                                    <DropDown2 
+                                    onChange={(e) => this.dropDownChange1(e)} />
+                                </div>
+                                <button onClick={() =>this.handleAddMenu()} type="button" className="btn btn-light clone">
+                                    <i className="far fa-clone"></i>
+                                </button>
+                                <button onClick={() => this.props.onDelete()} type="button" className="btn btn-light trash two">
+                                    <i className="far fa-trash-alt"></i>
+                                </button>
                             </div>
-                            <div className="dropdown  d-inline-block">
-                                <DropDown2 
-                                onChange={(e) => this.dropDownChange1(e)} />
-                            </div>
-                            <button onClick={() =>this.handleAddMenu()} type="button" className="btn btn-light plus"></button>
-                           
-                            <button type="button" className="btn btn-light plus">
-                                <i className="fas fa-plus-circle">
-                                </i>
-                            </button>
                         </div>
                     </div>
                 </div>

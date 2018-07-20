@@ -15,9 +15,6 @@ import {AlertSaved} from '../components/AlertSaved';
 
 import {ShowNotification} from '../components/ShowNotification';
 
-import {AddCurrencyButton} from '../components/AddCurrencyButton';
-
-
 import {HomeEditToggle} from '../components/HomeEditToggle';
 
 import ReactAutocomplete from 'react-autocomplete';
@@ -32,13 +29,12 @@ export class HomeEdit extends Flux.View {
             this.state = {
                 showNotificationModal: false,
                 showAlertSaved: false,
-                showSavedNotifications: false,
-                showAddCurrencyButton: false,
                 currentTypedCoinName:'',
                 coins: [],
                 filteredCoins: [],
                 setting: 'price_delta',
-                delta:'0%'
+                delta:'0%',
+                notificationList: []
             };
     }
     
@@ -58,18 +54,7 @@ export class HomeEdit extends Flux.View {
         }));
     }
     
-    toggleSavedNotifications(){
-        this.setState((prevState) => ({
-            showSavedNotifications: !this.state.showSavedNotifications
-        }));
-    }
-    
-    toggleAddCurrencyButton(){
-        this.setState((prevState) => ({
-            showAddCurrencyButton: !this.state.showAddCurrencyButton
-        }));
-    }
-    
+
     dropDownChange(param){
         this.setState({
             setting: param
@@ -123,15 +108,10 @@ export class HomeEdit extends Flux.View {
     
     componentDidMount(){
         this.bindStore(MyStore,() => {
-            this.toggleNotificationModal();
             this.toggleAlertSaved();
-            this.toggleSavedNotifications();
-            this.toggleAddCurrencyButton();
             const coins = MyStore.getCoins();
             this.setState({
-                coins:coins
-            });
-            this.setState({
+                coins:coins,
                 menuItem: MyStore.getMenuItem()
             });
         });
@@ -140,6 +120,13 @@ export class HomeEdit extends Flux.View {
     }
     
     render(){
+        const listOfNotification = this.state.notificationList.map((notificationList, i) => {
+            return <HomeEditToggle key={i} 
+            />;
+        });
+            
+     
+            
         return <div className="homeEdit">
             <NavBar />
             {
@@ -150,15 +137,10 @@ export class HomeEdit extends Flux.View {
                     <div className="col-12 col-lg-8 col-md-10 mx-auto topRow">
                         <div className="topDiv">
                             <img className="logoImg" src={logoUrl}></img><div className="title">CrappyCoin</div>
-                            {
-                                (this.state.showAddCurrencyButton) ? <AddCurrencyButton onClose={()=>this.toggleAddCurrencyButton()} />: ''
-                            }
                         </div>
                     </div>
                 </div>
-                {
-                    (this.state.showSavedNotifications) ? <ShowNotification onClose={()=>this.toggleSavedNotifications()} />: ''
-                }
+          
                 
                 <div className="row">
                     <div className="col-12 col-lg-8 col-md-10 mx-auto">
@@ -186,27 +168,21 @@ export class HomeEdit extends Flux.View {
                                             currentTypedCoinName: e.target.value
                                         });
                                     }}
-                                    onSelect={value => this.setState({ value })}
+                                    onSelect={value => {
+                                    this.setState({ 
+                                        value : value,
+                                        currentTypedCoinName: value
+                                    });
+                                        
+                                    }}
                             />
                             <div className="dropdown  d-inline-block">
-                                <button type="button" className="btn btn-light">
-                                    <i className="fa fa-search">
-                                    </i>
-                                </button>
                             </div>
                         </div>
                     </div>
                 </div>    
 
-                <div className="row">
-                    <div className="col-12 col-lg-8 col-md-10 mx-auto">
-                        <div className="divBody-edit">
-                                
-                        </div>
-                    </div>
-                </div>
-                <HomeEditToggle />
-                <HomeEditToggle />
+                {listOfNotification}
                 <div className="row">
                     <div className="col-12 col-lg-8 col-md-10 mx-auto">
                         <div className="bottomDiv">
@@ -214,7 +190,7 @@ export class HomeEdit extends Flux.View {
                                  this.handleAddSettings();
                                  this.toggleNotificationModal();
                                     
-                                }}>Enable notifcations</button>
+                                }}>Add Alert</button>
                         </div>
                     </div>    
                 </div>

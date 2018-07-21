@@ -34,7 +34,7 @@ export class HomeEdit extends Flux.View {
                 filteredCoins: [],
                 setting: 'price_delta',
                 delta:'0%',
-                notificationList: ['coin1']
+                notificationList: []
             };
     }
     
@@ -120,8 +120,11 @@ export class HomeEdit extends Flux.View {
     }
     
     render(){
-        const listOfNotification = this.state.notificationList.map((notificationList, i) => {
+        const listOfNotification = this.state.notificationList.map((item, i) => {
             return <HomeEditToggle key={i} 
+                name={item}
+                                    
+        
             />;
         });
             
@@ -145,17 +148,24 @@ export class HomeEdit extends Flux.View {
                 <div className="row">
                     <div className="col-12 col-lg-8 col-md-10 mx-auto col-centered">
                         <div className="input-group col-centered">
-                            <div>
-                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
                             <div className="titleHeader">
-                                <h3>Enter a Coin to Search</h3> 
+                                <h3>Enter a Coin to Search:</h3> 
                             </div>
                             <span className='col-center'>
+                            <div>
                             <ReactAutocomplete 
-                                style={{width:100}}
+                                menuStyle={{
+                                    borderRadius: '3px',
+                                    boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',
+                                    background: 'rgba(255, 255, 255, 0.9)',
+                                    padding: '2px 0',
+                                    fontSize: '90%',
+                                    position: 'fixed',
+                                    overflow: 'auto',
+                                    maxHeight: '50%', // TODO: don't cheat, let it flow to the bottom
+                                    zIndex:9
+                                    
+                                }}
                                 wrapperStyle={{zIndex: 1000}}
                                 items={this.state.filteredCoins}
                                 getItemValue={item => item.fullName}
@@ -177,16 +187,18 @@ export class HomeEdit extends Flux.View {
                                         });
                                     }}
                                     onSelect={value => {
+                                    this.state.notificationList.push(value);
+                                    
                                     this.setState({ 
                                         value : value,
-                                        currentTypedCoinName: value
-                                    });
+                                        currentTypedCoinName: "",
+                                        notificationList: this.state.notificationList
+                                        });
                                         
                                     }}
                             />
-                            </span>
-                            <div className="dropdown  d-inline-block">
                             </div>
+                            </span>
                         </div>
                     </div>
                 </div>    

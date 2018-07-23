@@ -54,12 +54,6 @@ class MyActions extends Flux.Action{
         
     }
     
-    addMenu(){
-    let menuItem = MyStore.getMenuItem();
-    menuItem.push();
-    
-    this.dispatch('MyStore.setMenuItem'.menuItem);
-    }
     addSettings(setting, delta){
         
         let settings = MyStore.getSettings();
@@ -69,6 +63,13 @@ class MyActions extends Flux.Action{
         
         
     }
+    
+    addAllTheInfo(phone, email, notificationList){
+        console.log("I am in the actions", notificationList);
+        console.log("I am in the actions", phone);
+        console.log("I am in the actions", email);
+    } 
+    
     
 }
 

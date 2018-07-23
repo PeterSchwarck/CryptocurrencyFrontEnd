@@ -56,16 +56,6 @@ class MyStore extends Flux.Store {
         return this.state.coins;
     }
     
-    setMenuItem(newMenu){
-        this.setStoreState({
-            menuItem: newMenu
-        }).emit();
-    }
-    
-    getMenuItem(){
-        return this.state.menuItem;
-    }
-    
     
     
 }

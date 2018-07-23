@@ -62,7 +62,12 @@ export class AddAlert extends Flux.View {
                                 </div>
                             </div>
                             <p className="lead">
-                                <a className="btn btn-success btn-lg" href="#" role="button" onClick={() => MyActions.setupNotification({email: this.state.email, phone: this.state.phone})}>  Ok  </a> 
+                                <a className="btn btn-success btn-lg" href="#" role="button" onClick={() => {
+                                MyActions.setupNotification({email: this.state.email, phone: this.state.phone});
+                                this.props.onSave(this.state.phone, this.state.email);
+                                this.props.onClose();
+                                    
+                                }}>  Ok  </a> 
                                 <button onClick={() => this.props.onClose()} type="button" className="btn btn-secondary btn-lg" data-dismiss="modal" href="#" role="button">Cancel</button>
                             </p>
                         </form>

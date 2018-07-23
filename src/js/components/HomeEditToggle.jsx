@@ -5,12 +5,13 @@ import PropTypes from 'prop-types';
 import {DropDown1} from '../components/dropDown1';
 import {DropDown2} from '../components/dropDown2';
 
-import {ReactAutocomplete} from '../views/HomeEdit';
-
 export class HomeEditToggle extends React.Component {
     constructor(){
         super();
-            this.state = {};
+            this.state = {
+                setting: 'price_delta' ,
+                delta: "0%"
+            };
     }
     
     dropDownChange(param){
@@ -61,6 +62,7 @@ export class HomeEditToggle extends React.Component {
 
 
 HomeEditToggle.propTypes = {
+
   onDelete: PropTypes.func,
   currentTypedCoinName: PropTypes.object,
   name: PropTypes.string

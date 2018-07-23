@@ -34,7 +34,7 @@ export class HomeEdit extends Flux.View {
                 filteredCoins: [],
                 setting: 'price_delta',
                 delta:'0%',
-                notificationList: []
+                notificationList: ['    ']
             };
     }
     
@@ -191,14 +191,23 @@ export class HomeEdit extends Flux.View {
                                     
                                     this.setState({ 
                                         value : value,
-                                        currentTypedCoinName: "",
+
+                                        currentTypedCoinName: value,
                                         notificationList: this.state.notificationList
                                         });
+
                                         
+
+                                    
+
+                                        
+
                                     }}
+                                   
                             />
                             </div>
                             </span>
+
                         </div>
                     </div>
                 </div>    

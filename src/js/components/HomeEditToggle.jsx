@@ -19,12 +19,16 @@ export class HomeEditToggle extends React.Component {
         });
     }
     
-      dropDownChange1(param){
+    dropDownChange1(param){
         this.setState({
             delta: param
         });
     }
     
+    componentDidMount(){
+        this.props.notificationObject.test='this is a test';
+    }
+
     
     render(){
         return <div className="homeEditToggle"> 
@@ -43,8 +47,8 @@ export class HomeEditToggle extends React.Component {
                                 <div className="dropdown  d-inline-block">
                                     <DropDown2 
                                     onChange={(e) => this.dropDownChange1(e)} />
-                                </div>
-                                <button onClick={() => this.props.currentTypedCoinName.push(['newelement'])} type="button" className="btn btn-light clone">
+                                </div> 
+                                <button type="button" className="btn btn-light clone">
                                     <i className="far fa-clone"></i>
                                 </button>
                                 <button onClick={() => this.props.onDelete()} type="button" className="btn btn-light trash two">
@@ -62,6 +66,8 @@ export class HomeEditToggle extends React.Component {
 
 HomeEditToggle.propTypes = {
   onDelete: PropTypes.func,
-  currentTypedCoinName: PropTypes.object,
-  name: PropTypes.string
+  notificationList: PropTypes.object,
+  onSave: PropTypes.func,
+  name: PropTypes.string,
+  notificationObject: PropTypes.object
 };

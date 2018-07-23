@@ -29,6 +29,7 @@ export class HomeEdit extends Flux.View {
             this.state = {
                 showNotificationModal: false,
                 showAlertSaved: false,
+                showHomeEditToggle: false,
                 currentTypedCoinName:'',
                 coins: [],
                 filteredCoins: [],
@@ -51,6 +52,12 @@ export class HomeEdit extends Flux.View {
     toggleAlertSaved(){
         this.setState((prevState) => ({
             showAlertSaved: !this.state.showAlertSaved
+        }));
+    }
+    
+    toggleHomeEditToggle(){
+        this.setState((prevState) => ({
+            showHomeEditToggle: !this.state.showHomeEditToggle
         }));
     }
     
@@ -100,34 +107,36 @@ export class HomeEdit extends Flux.View {
         );
     }
     
-    handleAddMenu(){
-        MyActions.addMenu();
-    }
-    
-    
     
     componentDidMount(){
         this.bindStore(MyStore,() => {
-            this.toggleAlertSaved();
             const coins = MyStore.getCoins();
             this.setState({
                 coins:coins,
-                menuItem: MyStore.getMenuItem()
             });
         });
         
         MyActions.getCoinsfromHitBtc();
     }
     
+    
+    saveAddAlertInfo(phone, email){
+        MyActions.addAllTheInfo(phone, email, this.state.notificationList);
+        this.toggleAlertSaved();
+    }
+    
+    
     render(){
         const listOfNotification = this.state.notificationList.map((item, i) => {
             return <HomeEditToggle key={i} 
-                name={item}
-                                    
-        
+                name={item.coinName}
+                notificationObject={item}
+                
             />;
+                
         });
             
+    
      
             
         return <div className="homeEdit">
@@ -187,7 +196,7 @@ export class HomeEdit extends Flux.View {
                                         });
                                     }}
                                     onSelect={value => {
-                                    this.state.notificationList.push(value);
+                                    this.state.notificationList.push({coinName:value});
                                     
                                     this.setState({ 
                                         value : value,
@@ -211,6 +220,7 @@ export class HomeEdit extends Flux.View {
                          <button type="button" className="btn btn-secondary fithButton" onClick={() =>{
                                  this.handleAddSettings();
                                  this.toggleNotificationModal();
+                                 console.log("alert", this.state.notificationList);
                                     
                                 }}>Add Alert</button>
                         </div>
@@ -220,7 +230,7 @@ export class HomeEdit extends Flux.View {
             
             <FooterBar />
             {
-                (this.state.showNotificationModal) ? <AddAlert onClose={()=>this.toggleNotificationModal()}  />:''
+                (this.state.showNotificationModal) ? <AddAlert onClose={()=>this.toggleNotificationModal()} onSave={(phone, email)=>this.saveAddAlertInfo(phone, email)}  />:''
             }
         </div>;
     }

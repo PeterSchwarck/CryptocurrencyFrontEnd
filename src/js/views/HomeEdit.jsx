@@ -33,9 +33,8 @@ export class HomeEdit extends Flux.View {
                 currentTypedCoinName:'',
                 coins: [],
                 filteredCoins: [],
-                setting: 'price_delta',
-                delta:'0%',
-                notificationList: ['    ']
+                
+                notificationList: []
             };
     }
     
@@ -202,7 +201,8 @@ export class HomeEdit extends Flux.View {
                                         value : value,
 
                                         currentTypedCoinName: value,
-                                        notificationList: this.state.notificationList
+                                        notificationList: this.state.notificationList,
+                                        
                                         });
 
                                         
@@ -229,6 +229,10 @@ export class HomeEdit extends Flux.View {
                          <button type="button" className="btn btn-secondary fithButton" onClick={() =>{
                                  this.handleAddSettings();
                                  this.toggleNotificationModal();
+                                 this.setState({
+                                     delta:this.state.delta,
+                                     setting:this.state.setting
+                                 });
                                  console.log("alert", this.state.notificationList);
                                     
                                 }}>Add Alert</button>

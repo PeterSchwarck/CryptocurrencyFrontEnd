@@ -12,8 +12,8 @@ class MyActions extends Flux.Action{
             method:'POST',
             body: JSON.stringify({
                     email: "dave@gmallklkoklil.com",
-                    phone:"7864445566",
-                    volume_delta:"7864445566",
+                    phone:{},
+                    volume_delta:{},
                     price_delta:"7864445566",
                     coin:"7864445566"
             }),
@@ -68,6 +68,7 @@ class MyActions extends Flux.Action{
         console.log("I am in the actions", notificationList);
         console.log("I am in the actions", phone);
         console.log("I am in the actions", email);
+        
     } 
     
     

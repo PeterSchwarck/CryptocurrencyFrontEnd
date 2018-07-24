@@ -31,6 +31,7 @@ export class DropDown1 extends React.Component {
             this.props.onChange(e.target.value);
             this.setState({
               value: e.target.value
+              
             });
           }}>
             <option className="dropdown-item" value="price_delta">Price</option>

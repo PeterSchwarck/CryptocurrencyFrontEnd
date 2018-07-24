@@ -5,39 +5,10 @@ const HOST = 'https://final-project-backend-peterschwarck.c9users.io';
 
 class MyActions extends Flux.Action{
     
-    setupNotification(info){
+  
         //do whatever your like... and then...
     
-       fetch(HOST + '/notification/', {
-            method:'POST',
-            body: JSON.stringify({
-                    email: "dave@gmallklkoklil.com",
-                    phone:"7864445566",
-                    volume_delta:"7864445566",
-                    price_delta:"7864445566",
-                    coin:"7864445566"
-            }),
-            headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'applications/json'
-            }
-    
-            })
-            .then(response => response.json())
-            .then((json) => {
-                   // Dispatch to the store
-                   this.dispatch("MyStore.newNotification", json);
-            })
-            .catch(error => error);
-        
-        
-        
-        
-        
-        this.dispatch(
-            'MyStore.setNotificationInfo', info//data to send to the store
-        );
-    }
+      
     
     getCoinsfromHitBtc(){
         console.log("TRYing");
@@ -68,6 +39,34 @@ class MyActions extends Flux.Action{
         console.log("I am in the actions", notificationList);
         console.log("I am in the actions", phone);
         console.log("I am in the actions", email);
+        
+         fetch(HOST + '/notification/', {
+            method:'POST',
+            body: JSON.stringify({
+                    email: email ,
+                    phone: phone,
+                    notificationList
+            }),
+            headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'applications/json'
+            }
+    
+            })
+            .then(response => response.json())
+            .then((json) => {
+                   // Dispatch to the store
+                   this.dispatch("MyStore.newNotification", json);
+            })
+            .catch(error => error);
+        
+        
+        
+        
+        
+        
+    
+        
     } 
     
     deleteMenuItems(identifier){

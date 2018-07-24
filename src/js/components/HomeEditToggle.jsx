@@ -3,9 +3,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {DropDown1} from '../components/dropDown1';
+
 import {DropDown2} from '../components/dropDown2';
 
 import {ReactAutocomplete} from '../views/HomeEdit';
+
+import {withRouter} from 'react-router-dom';
 
 export class HomeEditToggle extends React.Component {
     constructor(){
@@ -27,6 +30,7 @@ export class HomeEditToggle extends React.Component {
     
     componentDidMount(){
         this.props.notificationObject.test='this is a test';
+        this.props.toggleHomeEditToggle;
     }
 
     
@@ -48,7 +52,7 @@ export class HomeEditToggle extends React.Component {
                                     <DropDown2 
                                     onChange={(e) => this.dropDownChange1(e)} />
                                 </div> 
-                                <button type="button" className="btn btn-light clone">
+                                <button onClick={() => this.props.toggleHomeEditToggle()} type="button" className="btn btn-light clone">
                                     <i className="far fa-clone"></i>
                                 </button>
                                 <button onClick={() => this.props.onDelete()} type="button" className="btn btn-light trash two">
@@ -69,5 +73,12 @@ HomeEditToggle.propTypes = {
   notificationList: PropTypes.object,
   onSave: PropTypes.func,
   name: PropTypes.string,
-  notificationObject: PropTypes.object
+  notificationObject: PropTypes.object,
+  listOfNotification: PropTypes.object,
+  identifier: PropTypes.number,
+  toggleHomeEditToggle: PropTypes.func
+};
+
+HomeEditToggle.defaultProps = {
+  onDelete: null
 };

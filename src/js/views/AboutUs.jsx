@@ -23,9 +23,9 @@ export class AboutUs extends React.Component {
                         <h1 className="display-4">Our Data</h1>
                         <hr className="my-4"></hr>
                         <p className="lead"><b>Our formula</b></p>
-                        <p className="lead">Explain here how the data is calculated and how often the rates are refreshed.</p>
-                        <p className="lead"><b>Volume</b></p>
-                        <p className="lead">Volume is the number of coins traded on all cryptocurrency exchanges. The volume is calculated each minute and presented on a user-defined period of time.</p>
+                        <p className="lead">Our data is calculated using the Hitbtc thrid-party API.</p>
+                        <p className="lead"><b>Volume and Price</b></p>
+                        <p className="lead">Volume is the number of coins traded on all cryptocurrency exchanges. The volume and price settings are calculated each minute and presented on user-defined market changes.</p>
                     </div>
                     <div className="col">
                     </div>

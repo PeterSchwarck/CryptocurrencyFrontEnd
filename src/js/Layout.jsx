@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import {AboutUs} from './views/AboutUs.jsx';
 import {Scanner} from './views/Introduction.jsx';
-import {ShowNotification} from './components/ShowNotification.jsx';
+import {ShowNotification} from './views/ShowNotification.jsx';
 import {HomeEdit} from './views/HomeEdit.jsx';
 import {ContactUs} from './views/Contactus.jsx';
 import {TestView}  from './views/TestView.jsx';

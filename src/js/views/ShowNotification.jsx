@@ -10,8 +10,35 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
+import MyActions from '../actions/MyActions';
+    
+import MyStore from '../stores/MyStore';
+
 
 export class ShowNotification extends Flux.View {
+        constructor(){
+        super();
+            this.state = {};
+    }
+    
+    
+    deleteMenuItems(name){
+        MyActions.deleteMenuItems(name);
+        console.log("I'm working");
+    }
+    
+    componentDidMount(){
+        this.bindStore(MyStore,() => {
+            this.setState({
+                menuItem: MyStore.getMenuItems()
+                
+            });
+        });
+        
+        MyActions.getCoinsfromHitBtc();
+    }
+    
+    
     render(){
         return <div className="homeEdit">
             <NavBar />
@@ -51,7 +78,7 @@ export class ShowNotification extends Flux.View {
                                         <td><span className="badge badge-success">5%</span></td>
                                         <td><span className="badge badge-danger">-17%</span></td> 
                                         <td>
-                                            <button onClick={() => this.props.onDelete(this.props.identifier)} type="button" className="btn btn-light trash two">
+                                            <button onClick={() => this.deleteMenuItems(this.props.name)} type="button" className="btn btn-light trash two">
                                                 <i className="far fa-trash-alt"></i>
                                             </button>
                                         </td>

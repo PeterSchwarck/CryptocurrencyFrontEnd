@@ -30,8 +30,8 @@ export class HomeEditToggle extends React.Component {
     
     componentDidMount(){
         this.props.notificationObject.test='this is a test';
-        this.props.toggleHomeEditToggle;
     }
+    
 
     
     render(){
@@ -52,10 +52,10 @@ export class HomeEditToggle extends React.Component {
                                     <DropDown2 
                                     onChange={(e) => this.dropDownChange1(e)} />
                                 </div> 
-                                <button onClick={() => this.props.toggleHomeEditToggle()} type="button" className="btn btn-light clone">
+                                <button onClick={() => this.props.onAddButtonClick(this.props.id)} type="button" className="btn btn-light clone">
                                     <i className="far fa-clone"></i>
                                 </button>
-                                <button onClick={() => this.props.onDelete()} type="button" className="btn btn-light trash two">
+                                <button onClick={() => this.props.onDelete(this.props.id)} type="button" className="btn btn-light trash two">
                                     <i className="far fa-trash-alt"></i>
                                 </button>
                             </div>
@@ -73,10 +73,13 @@ HomeEditToggle.propTypes = {
   notificationList: PropTypes.object,
   onSave: PropTypes.func,
   name: PropTypes.string,
+  id: PropTypes.number,
   notificationObject: PropTypes.object,
   listOfNotification: PropTypes.object,
   identifier: PropTypes.number,
-  toggleHomeEditToggle: PropTypes.func
+  onClick: PropTypes.func,
+  onAddButtonClick: PropTypes.func
+ 
 };
 
 HomeEditToggle.defaultProps = {

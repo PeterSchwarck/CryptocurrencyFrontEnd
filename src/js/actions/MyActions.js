@@ -5,10 +5,6 @@ const HOST = 'https://final-project-backend-peterschwarck.c9users.io';
 
 class MyActions extends Flux.Action{
     
-  
-        //do whatever your like... and then...
-    
-      
     
     getCoinsfromHitBtc(){
         console.log("TRYing");
@@ -60,24 +56,47 @@ class MyActions extends Flux.Action{
             })
             .catch(error => error);
         
-        
-        
-        
-        
-        
-    
-        
     } 
     
-    deleteMenuItems(identifier){
-        // let oldMenuItems = MyStore.getContacts();
+    deleteMenuItems(name){
         
-        // let updatedContacts = [];
+        fetch(HOST + '/notification/',{
+            method: 'DELETE'
+        })
+            .then(response => response.json())
+            .then((json) => {
+                let oldMenuItems = MyStore.getMenuItems();
+                for(var i = 0; i < oldMenuItems.length; i++) {
+                    if(oldMenuItems[i].identifier != name)
+                        updateMenuItem.push(oldMenuItems[i]);
+                }
+                this.dispatch('MyStore.setMenuItem', updateMenuItem);
+            })
+            .catch(error => error);
         
-        // for(var i = 0; i < oldContacts.length; i++) {
-        //     if(oldContacts[i].identifier != param1)
-        //         updatedContacts.push(oldContacts[i]);
-        }
+        let updateMenuItem = [];
+        
+       
+    }
+        
+        //  fetch(HOST + '/notification/', {
+        //     method:'DELETE',
+        //     body: JSON.stringify({
+        //             name
+        //     }),
+        //     headers: {
+        //             'Accept': 'application/json',
+        //             'Content-Type': 'applications/json'
+        //     }
+    
+        //     })
+        //     .then(response => response.json())
+        //     .then((json) => {
+        //           // Dispatch to the store
+        //           this.dispatch("MyStore.newNotification", json);
+        //     });
+     
+        // }
 
         
     

@@ -111,6 +111,7 @@ export class HomeEdit extends Flux.View {
             const coins = MyStore.getCoins();
             this.setState({
                 coins:coins,
+                
             });
         });
         
@@ -123,25 +124,38 @@ export class HomeEdit extends Flux.View {
         this.toggleAlertSaved();
     }
     
-    deleteMenuItems(identifier){
-        
+    deleteMenuItems(name){
+        MyActions.deleteMenuItems(name);
     }
+    
+    deleteComponentMenuItem(position){
+        const data = this.state.notificationList.filter((obj,i) => i !== position);
+        this.setState({notificationList: data});
+    }
+    
+    addComponentMenuItem(position){
+        const inputList = this.state.notificationList;
+        const alterCriteria = this.state.notificationList.find((obj,i) => i == position);
         
-    // MyActions.deleteMenuItems(identifier);
-    //     console.log("The view is about to delete");
-    // }
-    
+        this.setState({
+            notificationList: inputList.concat(Object.assign(alterCriteria, {id: Math.random()}))
+        });
+    }
 
-    
     
     render(){
         const listOfNotification = this.state.notificationList.map((item, i) => {
             return <HomeEditToggle key={i} 
                 name={item.coinName}
+                id={i}
                 notificationObject={item}
-                onDelete={(param1) => {
-                                    this.deleteMenuItems(param1);
+                onDelete={(id) => {
+                                    this.deleteComponentMenuItem(id);
                                 }}
+                onAddButtonClick={(id) => {
+                                    this.addComponentMenuItem(id);
+                                }}    
+                                
                 
             />;
                 

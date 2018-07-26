@@ -17,7 +17,9 @@ class MyStore extends Flux.Store {
                 
             },
             coins: [],
-            menuItem: []
+            menuItem: [],
+            notificationList: [],
+            updateMenuItem: []
         };
     }
 
@@ -56,6 +58,16 @@ class MyStore extends Flux.Store {
         return this.state.coins;
     }
     
+    setMenuItem(updateMenuItem){
+        this.setStoreState({
+            menuItem: updateMenuItem
+        }).emit();
+        console.log("Im in the store");
+    }
+    
+    getMenuItems(){
+        return this.state.updateMenuItem;
+    }
     
     
 }

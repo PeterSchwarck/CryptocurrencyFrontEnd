@@ -20,13 +20,17 @@ export class HomeEditToggle extends React.Component {
         this.setState({
             setting: param
         });
+    this.props.notificationObject.setting=param;    
     }
     
     dropDownChange1(param){
         this.setState({
             delta: param
         });
+    this.props.notificationObject.delta=param;
+        
     }
+    
     
     componentDidMount(){
         this.props.notificationObject.test='this is a test';

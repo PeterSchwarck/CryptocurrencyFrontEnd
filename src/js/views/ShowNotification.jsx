@@ -18,7 +18,9 @@ import MyStore from '../stores/MyStore';
 export class ShowNotification extends Flux.View {
         constructor(){
         super();
-            this.state = {};
+            this.state = {
+                notificationList: []
+            };
     }
     
     
@@ -35,11 +37,11 @@ export class ShowNotification extends Flux.View {
             });
         });
         
-        MyActions.getCoinsfromHitBtc();
     }
     
     
     render(){
+        
         return <div className="homeEdit">
             <NavBar />
             <div className="containerDiv container">
@@ -88,6 +90,7 @@ export class ShowNotification extends Flux.View {
                         </div>
                     </div>
                     <div className="row">
+                    
                     </div>
                     <FooterBar />
                 </div>

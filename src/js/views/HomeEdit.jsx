@@ -1,7 +1,8 @@
 import logoUrl from '../../img/logo/logo.png';
 
-import React from 'react';
 import { Link } from 'react-router-dom';
+
+import React from 'react';
 
 import Flux from '@4geeksacademy/react-flux-dash';
 
@@ -12,8 +13,6 @@ import {FooterBar} from '../components/FooterBar';
 import {NavBar} from '../components/NavBar';
 
 import {AlertSaved} from '../components/AlertSaved';
-
-import {ShowNotification} from '../components/ShowNotification';
 
 import {HomeEditToggle} from '../components/HomeEditToggle';
 
@@ -124,12 +123,25 @@ export class HomeEdit extends Flux.View {
         this.toggleAlertSaved();
     }
     
+    deleteMenuItems(identifier){
+        
+    }
+        
+    // MyActions.deleteMenuItems(identifier);
+    //     console.log("The view is about to delete");
+    // }
+    
+
+    
     
     render(){
         const listOfNotification = this.state.notificationList.map((item, i) => {
             return <HomeEditToggle key={i} 
                 name={item.coinName}
                 notificationObject={item}
+                onDelete={(param1) => {
+                                    this.deleteMenuItems(param1);
+                                }}
                 
             />;
                 
@@ -158,6 +170,7 @@ export class HomeEdit extends Flux.View {
                         <div className="input-group col-centered">
                             <div className="titleHeader">
                                 <h3>Enter a Coin to Search:</h3> 
+                            
                             </div>
                             <span className='col-center'>
                             <div>
@@ -201,15 +214,9 @@ export class HomeEdit extends Flux.View {
                                         value : value,
 
                                         currentTypedCoinName: value,
-                                        notificationList: this.state.notificationList,
+                                        notificationList: this.state.notificationList
                                         
                                         });
-
-                                        
-
-                                    
-
-                                        
 
                                     }}
                                    
@@ -219,8 +226,8 @@ export class HomeEdit extends Flux.View {
 
                         </div>
                     </div>
-                </div>    
-
+                </div>
+              
                 {listOfNotification}
                  
                 <div className="row">
@@ -245,6 +252,10 @@ export class HomeEdit extends Flux.View {
             {
                 (this.state.showNotificationModal) ? <AddAlert onClose={()=>this.toggleNotificationModal()} onSave={(phone, email)=>this.saveAddAlertInfo(phone, email)}  />:''
             }
+            {
+                (this.state.showHomeEditToggle) ? <HomeEditToggle onClose={()=>this.toggleHomeEditToggle()} />: ''
+            }
+                
         </div>;
     }
 }

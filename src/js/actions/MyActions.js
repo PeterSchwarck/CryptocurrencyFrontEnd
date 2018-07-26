@@ -69,6 +69,18 @@ class MyActions extends Flux.Action{
         
     } 
     
+    deleteMenuItems(identifier){
+        // let oldMenuItems = MyStore.getContacts();
+        
+        // let updatedContacts = [];
+        
+        // for(var i = 0; i < oldContacts.length; i++) {
+        //     if(oldContacts[i].identifier != param1)
+        //         updatedContacts.push(oldContacts[i]);
+        }
+
+        
+    
     
 }
 

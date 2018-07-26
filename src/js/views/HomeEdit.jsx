@@ -203,7 +203,7 @@ export class HomeEdit extends Flux.View {
                                 }}
                                 wrapperStyle={{zIndex: 1000}}
                                 items={this.state.filteredCoins}
-                                getItemValue={item => item.fullName}
+                                getItemValue={item => item.id}
                                 renderItem={(item, highlighted) =>
                                 (<div
                                     key={item.id}
@@ -212,7 +212,7 @@ export class HomeEdit extends Flux.View {
                                           
                                     }}
                                 >
-                                    {item.fullName}
+                                    {item.id}
                                 </div>)}
                                     value={this.state.currentTypedCoinName}
                                     onChange={e => {

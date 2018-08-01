@@ -19,6 +19,7 @@ export class NotificationCard extends React.Component {
     
     
     
+    
     render(){
         return <div className="notificationcard vertical-center" >
             <div className="col-12 col-lg-6 col-md-8 mx-auto" style={{display: (this.state.show) ? 'inline-block' : 'none'}}>

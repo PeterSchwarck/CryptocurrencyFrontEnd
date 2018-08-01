@@ -1,0 +1,2 @@
+I. Introduction: 
+This is a alert monitoring website for low market cap cryptocurrencies. Users select the cryptocurrency, set the price and volume change, then enter their email and mobile phone information. The website will then send the user an alert via email or SMS everytime the cryptocurrnecy change equal the user-defined parameters.

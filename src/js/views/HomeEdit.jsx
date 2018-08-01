@@ -183,7 +183,7 @@ export class HomeEdit extends Flux.View {
                     <div className="col-12 col-lg-8 col-md-10 mx-auto col-centered">
                         <div className="input-group col-centered">
                             <div className="titleHeader">
-                                <h3>Enter a Coin to Search:</h3> 
+                                <h3>Enter a coin to search:</h3> 
                             
                             </div>
                             <span className='col-center'>
